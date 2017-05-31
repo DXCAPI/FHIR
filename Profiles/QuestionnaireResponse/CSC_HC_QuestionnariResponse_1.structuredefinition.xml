@@ -1,0 +1,1697 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-01-19T17:26:22.136+05:30" />
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0" />
+  </extension>
+  <url value="https://cscnextdev.atlassian.net/wiki/display/LAE/CSC_HC_QuestionnaireResponse_1" />
+  <version value="1.0" />
+  <name value="CSC_HC_QuestionnaireResponse_1" />
+  <status value="draft" />
+  <date value="2016-12-05T00:00:00+05:30" />
+  <description value="CSC profile of QuestionnaireResponse resource" />
+  <requirements value="To support structured, hierarchical registration of data gathered using digital forms and other questionnaires." />
+  <fhirVersion value="1.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/w5" />
+    <name value="W5 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <constrainedType value="QuestionnaireResponse" />
+  <abstract value="false" />
+  <base value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse" />
+  <snapshot>
+    <element>
+      <path value="QuestionnaireResponse" />
+      <short value="A structured set of questions and their answers" />
+      <definition value="A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions." />
+      <alias value="Form" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="QuestionnaireResponse" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="QuestionnaireResponse" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="Observation[moodCode=EVN]" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="infrastructure.information" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <name value="version" />
+      <short value="Version" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.extension" />
+        <min value="1" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/CSC_HC_Version_1_Ext" />
+      </type>
+      <mustSupport value="false" />
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <name value="modifiedBy" />
+      <short value="User that modified the resource" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_ModifiedBy_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <name value="created" />
+      <short value="Date of creation of the resource" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_Created_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <name value="modified" />
+      <short value="Last modified date" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_Modified_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <name value="context" />
+      <short value="Authoring context " />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_Context_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <name value="reason" />
+      <short value="Reason for modification/cancellation" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_Reason_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier" />
+      <short value="Unique id for this set of answers" />
+      <definition value="A business identifier assigned to a particular completed (or partially completed) questionnaire." />
+      <requirements value="Used for tracking, registration and other business purposes." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.identifier" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Identifier" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value=".id" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="id" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.use" />
+      <short value="usual | official | temp | secondary (If known)" />
+      <definition value="The purpose of this identifier." />
+      <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary." />
+      <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Identifier.use" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isModifier value="true" />
+      <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Identifies the purpose for this identifier, if known ." />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/identifier-use" />
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="N/A" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="Role.code or implied by context" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.type" />
+      <short value="Description of identifier" />
+      <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose." />
+      <comments value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." />
+      <requirements value="Allows users to make use of identifiers when the identifier system is not known." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Identifier.type" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="extensible" />
+        <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose." />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/identifier-type" />
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.5" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="Role.code or implied by context" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.type.coding" />
+      <short value="Code defined by a terminology system" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="CodeableConcept.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.type.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Coding.system" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="uri" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.3" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.type.coding.version" />
+      <short value="Version of the system - if relevant" />
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Coding.version" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.7" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystemVersion" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.type.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Coding.code" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./code" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.type.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.type.coding.userSelected" />
+      <short value="If this coding was chosen directly by the user" />
+      <definition value="Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays)." />
+      <comments value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely." />
+      <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Coding.userSelected" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="boolean" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="Sometimes implied by being first" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CD.codingRationale" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.type.text" />
+      <short value="Plain text representation of the concept" />
+      <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user." />
+      <comments value="Very often the text is the same as a displayName of one of the codings." />
+      <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="CodeableConcept.text" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.9. But note many systems use C*E.2 for this" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./originalText[mediaType/code=&quot;text/plain&quot;]/data" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.system" />
+      <short value="The namespace for the identifier" />
+      <definition value="Establishes the namespace in which set of possible id values is unique." />
+      <requirements value="There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Identifier.system" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="uri" />
+      </type>
+      <exampleUri value="http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.4 / EI-2-4" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="II.root or Role.id.root" />
+      </mapping>
+      <mapping>
+        <identity value="servd" />
+        <map value="./IdentifierType" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.value" />
+      <short value="The value that is unique" />
+      <definition value="The portion of the identifier typically displayed to the user and which is unique within the context of the system." />
+      <comments value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Identifier.value" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <exampleString value="123456" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.1 / EI.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)" />
+      </mapping>
+      <mapping>
+        <identity value="servd" />
+        <map value="./Value" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.period" />
+      <short value="Time period when id is/was valid for use" />
+      <definition value="Time period during which identifier is/was valid for use." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Identifier.period" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Period" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.7 + CX.8" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="Role.effectiveTime or implied by context" />
+      </mapping>
+      <mapping>
+        <identity value="servd" />
+        <map value="./StartDate and ./EndDate" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.period.start" />
+      <short value="Starting time with inclusive boundary" />
+      <definition value="The start of the period. The boundary is inclusive." />
+      <comments value="If the low element is missing, the meaning is that the low boundary is not known." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Period.start" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <condition value="per-1" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="DR.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./low" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.period.end" />
+      <short value="End time with inclusive boundary, if not ongoing" />
+      <definition value="The end of the period. If the end of the period is missing, it means that the period is ongoing. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time." />
+      <comments value="The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has a end value of 2012-02-03." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Period.end" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <meaningWhenMissing value="If the end of the period is missing, it means that the period is ongoing" />
+      <condition value="per-1" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="DR.2" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./high" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.assigner" />
+      <short value="Organization that issued id (may be just text)" />
+      <definition value="Organization that issued/manages the identifier." />
+      <comments value="The reference may be just a text description of the assigner." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Identifier.assigner" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.4 / (CX.4,CX.9,CX.10)" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper" />
+      </mapping>
+      <mapping>
+        <identity value="servd" />
+        <map value="./IdentifierIssuingAuthority" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.assigner.reference" />
+      <short value="Relative, internal or absolute URL reference" />
+      <definition value="A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
+      <comments value="Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure &quot;/[type]/[id]&quot; then it should be assumed that the reference is to a FHIR RESTful server." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Reference.reference" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <condition value="ref-1" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.identifier.assigner.display" />
+      <short value="Text alternative for the resource" />
+      <definition value="Plain text narrative that identifies the resource in addition to the resource reference." />
+      <comments value="This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Reference.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.questionnaire" />
+      <short value="Form being answered" />
+      <definition value="Indicates the Questionnaire resource that defines the form for which answers are being provided." />
+      <requirements value="Needed to allow editing of the questionnaire in a manner that enforces the constraints of the original form." />
+      <alias value="Form" />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.questionnaire" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Questionnaire" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="./outboundRelationship[typeCode=INST]/target[classCode=OBS, moodCode=DEFN]" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.questionnaire.reference" />
+      <short value="Relative, internal or absolute URL reference" />
+      <definition value="A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
+      <comments value="Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure &quot;/[type]/[id]&quot; then it should be assumed that the reference is to a FHIR RESTful server." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Reference.reference" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <condition value="ref-1" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.questionnaire.display" />
+      <short value="Text alternative for the resource" />
+      <definition value="Plain text narrative that identifies the resource in addition to the resource reference." />
+      <comments value="This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Reference.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.status" />
+      <short value="in-progress | completed | amended" />
+      <definition value="The lifecycle status of the questionnaire response as a whole." />
+      <requirements value="The information on Questionnaire resources  may possibly be gathered during multiple sessions and altered after considered being finished. Questionnaire resources with just questions may serve as template forms, with the applicable publication statuses." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.status" />
+        <min value="1" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isModifier value="true" />
+      <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Lifecycle status of the questionnaire response." />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/questionnaire-answers-status" />
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="rim" />
+        <map value=".statusCode (also whether there's a revisionControlAct - and possibly mood to distinguish &quot;in-progress&quot; from &quot;published)" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="status" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.subject" />
+      <short value="The subject of the questions" />
+      <definition value="The subject of the questionnaire response.  This could be a patient, organization, practitioner, device, etc.  This is who/what the answers apply to, but is not necessarily the source of information." />
+      <requirements value="The subject context must be known." />
+      <alias value="Patient" />
+      <alias value="Focus" />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.subject" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Resource" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value=".participation[typeCode=SBJ].role" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="who.focus" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.subject.reference" />
+      <short value="Relative, internal or absolute URL reference" />
+      <definition value="A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
+      <comments value="Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure &quot;/[type]/[id]&quot; then it should be assumed that the reference is to a FHIR RESTful server." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Reference.reference" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <condition value="ref-1" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.subject.display" />
+      <short value="Text alternative for the resource" />
+      <definition value="Plain text narrative that identifies the resource in addition to the resource reference." />
+      <comments value="This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Reference.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.author" />
+      <short value="Person who received and recorded the answers" />
+      <definition value="Person who received the answers to the questions in the QuestionnaireResponse and recorded them in the system." />
+      <comments value="Mapping a subject's answers to multiple choice options and determining what to put in the textual answer is a matter of interpretation.  Authoring by device would indicate that some portion of the questionnaire had been auto-populated." />
+      <requirements value="Need to know who interpreted the subject's answers to the questions in the questionnaire, and selected the appropriate options for answers." />
+      <alias value="Laboratory" />
+      <alias value="Service" />
+      <alias value="Practitioner" />
+      <alias value="Department" />
+      <alias value="Company" />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.author" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Device" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value=".participation[typeCode=AUT].role" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="who.author" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.authored" />
+      <short value="Date this version was authored" />
+      <definition value="The date and/or time that this version of the questionnaire response was authored." />
+      <comments value="May be different from the update time of the resource itself, because that is the status of the collection and authoring.  This element is optional to allow for systems that may not know the value, however it SHOULD be populated if possible." />
+      <requirements value="Clinicians need to be able to check the date that the information in the questionnaire was collected, to derive the context of the answers." />
+      <alias value="Date Created" />
+      <alias value="Date published" />
+      <alias value="Date Issued" />
+      <alias value="Date updated" />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.authored" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value=".participation[typeCode=AUT].time" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="when.recorded" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.source" />
+      <short value="The person who answered the questions" />
+      <definition value="The person who answered the questions about the subject." />
+      <comments value="If not specified, no inference can be made about who provided the data." />
+      <requirements value="When answering questions about a subject that is minor, incapable of answering or an animal, another human source is used to answer the questions." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.source" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value=".participation[typeCode=INF].role" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="who.source" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.encounter" />
+      <short value="Primary encounter during which the answers were collected" />
+      <definition value="Encounter during which this set of questionnaire response were collected. When there were multiple encounters, this is the one considered most relevant to the context of the answers." />
+      <requirements value="Some institutions track questionnaires under a specific encounter." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.encounter" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Encounter" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value=".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="context" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.encounter.reference" />
+      <short value="Relative, internal or absolute URL reference" />
+      <definition value="A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
+      <comments value="Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure &quot;/[type]/[id]&quot; then it should be assumed that the reference is to a FHIR RESTful server." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Reference.reference" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <condition value="ref-1" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.encounter.display" />
+      <short value="Text alternative for the resource" />
+      <definition value="Plain text narrative that identifies the resource in addition to the resource reference." />
+      <comments value="This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Reference.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Group" />
+      </extension>
+      <path value="QuestionnaireResponse.group" />
+      <name value="group" />
+      <short value="Grouped questions" />
+      <definition value="A group of questions to a possibly similarly grouped set of questions in the questionnaire response." />
+      <comments value="The Questionnaire itself has one &quot;root&quot; group with the actual contents of the Questionnaire." />
+      <requirements value="Need to be able to logically group answers to grouped questions." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="BackboneElement" />
+      </type>
+      <constraint>
+        <key value="qrs-1" />
+        <severity value="error" />
+        <human value="Groups may either contain questions or groups but not both" />
+        <xpath value="not(exists(f:group) and exists(f:question))" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value=".outboundRelationship[typeCode=COMP].target[classCode=OBS, moodCode=EVN]" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.extension" />
+      <name value="type" />
+      <short value="Type of group" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_GroupType_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.extension" />
+      <name value="date" />
+      <short value="Date of the items in the gourp" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_Date_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.modifierExtension" />
+      <short value="Extensions that cannot be ignored" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." />
+      <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <alias value="modifiers" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="BackboneElement.modifierExtension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <isModifier value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.linkId" />
+      <short value="Corresponding group within Questionnaire" />
+      <definition value="Identifies the group from the Questionnaire that corresponds to this group in the QuestionnaireResponse resource." />
+      <requirements value="Groups can repeat in the answers, so a direct 1..1 correspondence may not exist - requiring correspondence by identifier." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.linkId" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value=".outboundRelationship[typeCode=DEFN].target[classCode=OBS, moodCode=DEFN]" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.title" />
+      <short value="Name for this group" />
+      <definition value="Text that is displayed above the contents of the group." />
+      <comments value="On the root group, this is the title of the questionnaire." />
+      <requirements value="When including text for the questionnaire with the answers, sections may have a section header." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.title" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value=".title" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.text" />
+      <short value="Additional text for the group" />
+      <definition value="Additional text for the group, used for display purposes." />
+      <requirements value="When including text for the questionnaire, each section may contain additional explanations are background text." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.text" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value=".text" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.subject" />
+      <short value="The subject this group's answers are about" />
+      <definition value="More specific subject this section's answers are about, details the subject given in QuestionnaireResponse." />
+      <requirements value="Sometimes a group of answers is about a specific participant, artifact or piece of information in the patient's care or record, e.g. a specific Problem, RelatedPerson, Allergy etc." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.subject" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Resource" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value=".participation[typeCode=SBJ].role or .outboundRelationship[typeCode=SUBJ].target" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.subject.reference" />
+      <short value="Relative, internal or absolute URL reference" />
+      <definition value="A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
+      <comments value="Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure &quot;/[type]/[id]&quot; then it should be assumed that the reference is to a FHIR RESTful server." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Reference.reference" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <condition value="ref-1" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.subject.display" />
+      <short value="Text alternative for the resource" />
+      <definition value="Plain text narrative that identifies the resource in addition to the resource reference." />
+      <comments value="This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Reference.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.group" />
+      <short value="Nested questionnaire response group" />
+      <definition value="A sub-group within a group. The ordering of groups within this group is relevant." />
+      <requirements value="Reports can consist of complex nested groups." />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="QuestionnaireResponse.group.group" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <nameReference value="group" />
+      <condition value="qrs-1" />
+      <mapping>
+        <identity value="rim" />
+        <map value=".outboundRelationship[typeCode=COMP].target[classCode=OBS, moodCode=EVN]" />
+      </mapping>
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Question" />
+      </extension>
+      <path value="QuestionnaireResponse.group.question" />
+      <short value="Questions in this group" />
+      <definition value="Set of questions within this group. The order of questions within the group is relevant." />
+      <requirements value="Must register answers to questions." />
+      <alias value="Responses" />
+      <alias value="Contents" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="QuestionnaireResponse.group.question" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="BackboneElement" />
+      </type>
+      <condition value="qrs-1" />
+      <mapping>
+        <identity value="rim" />
+        <map value=".outboundRelationship[typeCode=COMP].target[classCode=OBS, moodCode=EVN or DEF]" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.modifierExtension" />
+      <short value="Extensions that cannot be ignored" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." />
+      <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <alias value="modifiers" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="BackboneElement.modifierExtension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <isModifier value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.linkId" />
+      <short value="Corresponding question within Questionnaire" />
+      <definition value="Identifies the question from the Questionnaire that corresponds to this question in the QuestionnaireResponse resource." />
+      <requirements value="Groups can repeat in the answers, so a direct 1..1 correspondence may not exist - requiring correspondence by id." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.question.linkId" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value=".outboundRelationship[typeCode=DEFN].target[classCode=OBS, moodCode=DEFN]" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.text" />
+      <short value="Text of the question as it is shown to the user" />
+      <definition value="The actual question as shown to the user to prompt them for an answer." />
+      <requirements value="When including text for the questionnaire, each question may contain its actual question display text." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.question.text" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value=".code.display" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer" />
+      <short value="The response(s) to the question" />
+      <definition value="The respondent's answer(s) to the question." />
+      <comments value="The value is nested because we cannot have a repeating structure that has variable type." />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="QuestionnaireResponse.group.question.answer" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="BackboneElement" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value=".value[type=LIST_ANY]" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.extension" />
+      <name value="uom" />
+      <short value="Unit of measure" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.question.answer.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_UOM_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.modifierExtension" />
+      <short value="Extensions that cannot be ignored" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." />
+      <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <alias value="modifiers" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="BackboneElement.modifierExtension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <isModifier value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.value[x]" />
+      <short value="Single-valued answer to the question" />
+      <definition value="The answer (or one of the answers) provided by the respondent to the question." />
+      <comments value="More complex structures (Attachment, Resource and Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type.  Additional complex types can be introduced through extensions." />
+      <requirements value="Ability to retain a single-valued answer to a question." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.question.answer.value[x]" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="boolean" />
+      </type>
+      <type>
+        <code value="decimal" />
+      </type>
+      <type>
+        <code value="integer" />
+      </type>
+      <type>
+        <code value="date" />
+      </type>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <type>
+        <code value="instant" />
+      </type>
+      <type>
+        <code value="time" />
+      </type>
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="uri" />
+      </type>
+      <type>
+        <code value="Attachment" />
+      </type>
+      <type>
+        <code value="Coding" />
+      </type>
+      <type>
+        <code value="Quantity" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Resource" />
+      </type>
+      <binding>
+        <strength value="example" />
+        <description value="Code indicating the response provided for a question." />
+      </binding>
+      <mapping>
+        <identity value="rim" />
+        <map value=".item" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.group" />
+      <short value="Nested questionnaire group" />
+      <definition value="Nested group, containing nested question for this question. The order of groups within the question is relevant." />
+      <requirements value="It is useful to have &quot;sub-questions&quot;, questions which normally appear when certain answers are given and which collect additional details." />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="QuestionnaireResponse.group.question.answer.group" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <nameReference value="group" />
+      <mapping>
+        <identity value="rim" />
+        <map value=".outboundRelationship[typeCode=COMP].target[classCode=DOCSECT, moodCode=EVN]" />
+      </mapping>
+    </element>
+  </snapshot>
+  <differential>
+    <element>
+      <path value="QuestionnaireResponse" />
+      <short value="A structured set of questions and their answers" />
+      <definition value="A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions." />
+      <alias value="Form" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="QuestionnaireResponse" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="QuestionnaireResponse" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="Observation[moodCode=EVN]" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="infrastructure.information" />
+      </mapping>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <name value="version" />
+      <short value="Version" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.extension" />
+        <min value="1" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/CSC_HC_Version_1_Ext" />
+      </type>
+      <mustSupport value="false" />
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <name value="modifiedBy" />
+      <short value="User that modified the resource" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_ModifiedBy_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <name value="created" />
+      <short value="Date of creation of the resource" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_Created_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <name value="modified" />
+      <short value="Last modified date" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_Modified_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <name value="context" />
+      <short value="Authoring context " />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_Context_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.extension" />
+      <name value="reason" />
+      <short value="Reason for modification/cancellation" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_Reason_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.extension" />
+      <name value="type" />
+      <short value="Type of group" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_GroupType_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.extension" />
+      <name value="date" />
+      <short value="Date of the items in the gourp" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_Date_1_Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.extension" />
+      <name value="uom" />
+      <short value="Unit of measure" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="QuestionnaireResponse.group.question.answer.extension" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="https://cscnextdev.atlassian.net/wiki/display/LAE/Extensions/CSC_HC_UOM_1_Ext" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
