@@ -1,0 +1,118 @@
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="09a98318-9996-4cac-8215-5530a4042102" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2017-05-26T08:42:42+03:00" />
+  </meta>
+  <text>
+    <status value="empty" />
+    <div xmlns="http://www.w3.org/1999/xhtml" />
+  </text>
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/ImplementationGuide/DXC_HC_NurseAide_1" />
+  <version value="1" />
+  <name value="DXC_HC_NurseAide_1" />
+  <status value="draft" />
+  <date value="2017-05-26T08:42:42+03:00" />
+  <description value="NurseAide Implementation Guide" />
+  <fhirVersion value="3.0.0" />
+  <package>
+    <name value="NurseAide_Profiles" />
+    <description value="NurseAide Profiles" />
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_CommunicationRequest_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_CommunicationRequest_1" />
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_DetectedIssue_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_DetectedIssue_1" />
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_Encounter_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Encounter_1" />
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_Location_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Location_1" />
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_MedicationAdministration_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_MedicationAdministration_1" />
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_MedicationRequest_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_MedicationRequest_1" />
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_NutritionOrder_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_NutritionOrder_1" />
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_Observation_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Observation_1" />
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_Patient_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Patient_1" />
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_Practitioner_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Practitioner_1" />
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_Procedure_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Procedure_1" />
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_ProcedureRequest_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_ProcedureRequest_1" />
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false" />
+      <name value="DXC_HC_Task_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Task_1" />
+      </sourceReference>
+    </resource>
+  </package>
+  <page>
+    <source value="http://www.csc.com/PublicServices/HC/FHIR/" />
+    <title value="FhirServer" />
+    <kind value="page" />
+  </page>
+</ImplementationGuide>

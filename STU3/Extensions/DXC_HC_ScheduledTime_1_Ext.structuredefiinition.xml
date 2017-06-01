@@ -1,0 +1,31 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-05-25T11:08:05.524+02:00" />
+  </meta>
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ScheduledTime_1_Ext" />
+  <version value="1" />
+  <name value="DXC_HC_ScheduledTime_1_Ext" />
+  <status value="draft" />
+  <date value="2017-05-25T10:39:42.2943372+02:00" />
+  <fhirVersion value="3.0.0" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Task" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element>
+      <path value="Extension.url" />
+      <fixedUri value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ScheduledTime_1_Ext" />
+    </element>
+    <element>
+      <path value="Extension.valueDateTime" />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
