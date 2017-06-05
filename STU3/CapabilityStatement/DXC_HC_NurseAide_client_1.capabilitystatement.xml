@@ -1,0 +1,839 @@
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="client"/>
+  <text>
+    <status value="additional"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+		<h2 id="title">NurseAide FHIR Client Requeriments</h2>
+		<ul>
+			<li>FHIR Version: 3.0.0</li>
+			<li>Supported formats: xml, json</li>
+			<li>Published: 2017-06-01</li>
+			<li>Published by: DXC Technology</li>
+		</ul>
+		<p>The Section describes the capabilities that the NurseAide client application expects from a FHIR server that will be responsible for providing responses to queries sent from that client. It defines the complete list of FHIR profiles, RESTful operations and search parameters that the FHIR server must support.</p>		
+		<h3 id="summary">Summary of NurseAide search criteria</h3>
+		<p>Specific server search capabilities are described in detail in each of the resource sections below.</p>
+		<table class="grid">
+			<thead>
+				<tr>
+					<th>Resource Type</th>
+					<th>Supported Profiles</th>
+					<th>Supported Searches</th>
+					<th>Supported Includes</th>
+					<th>Supported Includes Recurse</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><a href="#practitioner">Practitioner</a></td>
+					<td>NurseAide Practitioner Profile</td>
+					<td>identifier</td>
+					<td/>
+					<td/>
+				</tr>
+				<tr>
+					<td><a href="#parameters">Parameters</a></td>
+					<td>FHIR Paramenters resource</td>
+					<td>_tag</td>
+					<td/>
+					<td/>
+				</tr>
+				<tr>
+					<td><a href="#encounter">Encounter</a></td>
+					<td>NurseAide Encounter Profile</td>
+					<td>location, location-period</td>
+					<td>Encounter:patient, Encounter:location</td>
+					<td/>
+				</tr>
+				<tr>
+					<td><a href="#task">Task</a></td>
+					<td>NurseAide Task Profile</td>
+					<td>context + status + scheduledTime + _sort + _count, _id</td>
+					<td>Task:focus, Task:based-on, Task:requester</td>
+					<td>MedicationRequest:medication, MedicationAdministration:medication, Procedure.report, DiagnosticReport.result</td>
+				</tr>
+				<tr>
+					<td><a href="#detectedIssue">DetectedIssue</a></td>
+					<td>NurseAide DetectedIssue Profile</td>
+					<td>implicated</td>
+					<td/>
+					<td/>
+				</tr>
+				<tr>
+					<td><a href="#observation">Observation</a></td>
+					<td>NurseAide Observation Profile</td>
+					<td>code + date + context + _sort + _count</td>
+					<td/>
+					<td/>
+				</tr>
+				<tr>
+					<td><a href="#procedure">Procedure</a></td>
+					<td>NurseAide Procedure Profile</td>
+					<td>based-on + date + _sort + _count</td>
+					<td/>
+					<td/>
+				</tr>
+				<tr>
+					<td><a href="#medicationAdministration">MedicationAdministration</a></td>
+					<td>NurseAide MedicationAdministration Profile</td>
+					<td>prescription + date + _sort + _count</td>
+					<td/>
+					<td/>
+				</tr>
+				<tr>
+					<td><a href="#communicationRequest">CommunicationRequest</a></td>
+					<td>NurseAide CommunicationRequest Profile</td>
+					<td>recipient, recipient + authored + status</td>
+					<td>CommunicationRequest.subject</td>
+					<td/>
+				</tr>				
+			</tbody>
+		</table>
+					
+		<h3 id="resource--details" class="no_toc">Resource  Details</h3>
+		<h5 id="patient" class="no_toc">1. Patient</h5>
+		<p>Required Profiles:  
+			<a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Patient_1.structuredefinition.xml">NurseAide Patient Profile</a>
+		</p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning a patient using:</p>
+				<p><code class="highlighter-rouge">GET [base]/Encounter?location={locationId}&#38;location-period={currentDate}&#38;_include=Encounter:patient&#38;_include=Encounter:location</code>.</p>
+			</li>	
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning a patient using:</p>
+				<p><code class="highlighter-rouge">GET [base]/CommunicationRequest?recipient={recipient}&#38;_include=CommunicationRequest.subject</code>.</p>
+			</li>
+		</ul>		
+		
+		<h5 id="practitioner" class="no_toc">2. Practitioner</h5>
+		<p>Required Profiles:  
+			<a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Practitioner_1.structuredefinition.xml">NurseAide Practitioner Profile</a>
+		</p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li><p>A server <strong>SHALL</strong> be capable of returning a practitioner by identifier using
+				<code class="highlighter-rouge">GET [base]/Practitioner?identifier=[code]</code></p>
+			</li>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning a practitioner using:</p>
+				<p><code class="highlighter-rouge">GET [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester</code>.</p>
+			</li>			
+		</ul>
+		<p>Search Parameters:</p>
+		<table class="grid">
+			<thead>
+				<tr>
+					<th>Conformance</th>
+					<th>Parameter</th>
+					<th>Type</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>SHALL</td>
+					<td>identifier</td>
+					<td>string</td>
+				</tr>				
+			</tbody>
+		</table>
+		<h5 id="encounter" class="no_toc">3. Encounter</h5>
+		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Encounter_1.structuredefinition.xml">NurseAide Encounter Profile</a></p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning patient's Encounters using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Encounter?location={locationId}&#38;location-period={currentDate}&#38;_include=Encounter:patient&#38;_include=Encounter:location</code></p>
+			</li>			
+		</ul>
+		<p>Search Parameters:</p>
+		<table class="grid">
+			<thead>
+				<tr>
+					<th>Conformance</th>
+					<th>Parameter</th>
+					<th>Type</th>
+					<th>Includes</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>SHALL</td>
+					<td>location + location-period</td>
+					<td>string + date</td>
+					<td>Encounter:patient, Encounter:location</td>
+				</tr>				
+			</tbody>
+		</table>
+		<h5 id="task" class="no_toc">4. Task</h5>
+		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Task_1.structuredefinition.xml">NurseAide Task Profile</a></p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning all tasks of a patient's encounter over a specified time period using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Task?context={encounterId}&#38;scheduledTime= ge{lowerLimit}&#38;scheduledTime=le{upperLimit}</code></p>
+			</li>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning the first pending task of a patient's encounter over a specified time period using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Task?context={encounterId}&#38;status={pendingStatus}&#38;scheduledTime=ge{dateFrom}&#38;scheduledTime=le{dateUntil}&#38;_sort=date&#38;_count=1</code></p>
+			</li>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable returning a task information using</p>
+				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester</code></p>
+			</li>			
+		</ul>
+		<p>Search Parameters:</p>
+		<table class="grid">
+			<thead>
+				<tr>
+					<th>Conformance</th>
+					<th>Parameter</th>
+					<th>Type</th>
+					<th>Modifiers</th>
+					<th>Includes</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>SHALL</td>
+					<td>context + scheduledTime</td>
+					<td>reference + date</td>
+					<td>date modifiers 'ge','le'</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>SHALL</td>
+					<td>context + status + scheduledTime</td>
+					<td>reference + date</td>
+					<td>date modifiers 'ge','le'</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>SHALL</td>
+					<td>_id</td>
+					<td>string</td>
+					<td/>
+					<td>Task:focus, Task:based-on, Task:requester</td>					
+				</tr>				
+			</tbody>
+		</table>
+		<h5 id="detectedIssue" class="no_toc">5. DetectedIssue</h5>
+		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_DetectedIssue_1.structuredefinition.xml">NurseAide DetectedIssue Profile</a></p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning all detected issues of a task using:</p>
+				<p><code class="highlighter-rouge">Get [base]/DetectedIssue?implicated={taskId}</code></p>
+			</li>			
+		</ul>
+		<p>Search Parameters:</p>
+		<table class="grid">
+			<thead>
+				<tr>
+					<th>Conformance</th>
+					<th>Parameter</th>
+					<th>Type</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>SHALL</td>
+					<td>implicated</td>
+					<td>reference</td>					
+				</tr>				
+			</tbody>
+		</table>
+		
+		
+		<h5 id="observation" class="no_toc">6. Observation</h5>
+		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Observation_1.structuredefinition.xml">NurseAide Observation Profile</a></p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning last observations of a encounter using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Observation?code={code}&#38;date=lt{dateRef}&#38;context={encounterId}&#38;_sort=-date&#38;_count={numObservations}</code></p>
+			</li>			
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning observations using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester&#38;_include:recurse=Procedure.report&#38;_include:recurse=DiagnosticReport.result</code></p>
+			</li>
+		</ul>
+		<p>Search Parameters:</p>
+		<table class="grid">
+			<thead>
+				<tr>
+					<th>Conformance</th>
+					<th>Parameter</th>
+					<th>Type</th>
+					<th>Modifiers</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>SHALL</td>
+					<td>code + date + context</td>
+					<td>string + date + reference</td>
+					<td>date modifiers 'lt'</td>
+				</tr>				
+			</tbody>
+		</table>
+	
+	
+		<h5 id="procedure" class="no_toc">7. Procedure</h5>
+		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Procedure_1.structuredefinition.xml">NurseAide Procedure Profile</a></p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning last procedures of a request using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Procedure?based-on={requestId}&#38;date=lt{dateRef}&#38;_sort=-date&#38;_count={numLastProcedures}</code></p>
+			</li>	
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning procedures using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester</code></p>
+			</li>			
+		</ul>
+		<p>Search Parameters:</p>
+		<table class="grid">
+			<thead>
+				<tr>
+					<th>Conformance</th>
+					<th>Parameter</th>
+					<th>Type</th>
+					<th>Modifiers</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>SHALL</td>
+					<td>based-on + date</td>
+					<td>reference + date</td>
+					<td>date modifiers 'lt'</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<h5 id="medicationAdministration" class="no_toc">8. MedicationAdministration</h5>
+		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_MedicationAdministration_1.structuredefinition.xml">NurseAide MedicationAdministration Profile</a></p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning last administrations of a prescription using:</p>
+				<p><code class="highlighter-rouge">Get [base]/MedicationAdministration?prescription={requestId}&#38;date=lt{dateRef}&#38;_sort=-date&#38;_count={numLastAdministrations}</code></p>
+			</li>	
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning administrations using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester</code></p>
+			</li>
+		</ul>
+		<p>Search Parameters:</p>
+		<table class="grid">
+			<thead>
+				<tr>
+					<th>Conformance</th>
+					<th>Parameter</th>
+					<th>Type</th>
+					<th>Modifiers</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>SHALL</td>
+					<td>prescription + date</td>
+					<td>reference + date</td>
+					<td>date modifiers 'lt'</td>
+				</tr>				
+			</tbody>
+		</table>
+	
+		<h5 id="communicationRequest" class="no_toc">9. CommunicationRequest</h5>
+		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_CommunicationRequest_1.structuredefinition.xml">NurseAide CommunicationRequest Profile</a></p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning all of a recipient's CommunicationRequest information using:</p>
+				<p><code class="highlighter-rouge">Get [base]/CommunicationRequest?recipient={recipient}&#38;_include=CommunicationRequest.subject</code></p>
+			</li>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning all recipient's CommunicationRequest information over a specified status and from a specified date using:</p>
+				<p><code class="highlighter-rouge">Get [base]/CommunicationRequest?recipient={recipient}&#38;authored=ge{dateFrom}&#38;status={status}</code></p>
+			</li>			
+		</ul>
+		<p>Search Parameters:</p>
+		<table class="grid">
+			<thead>
+				<tr>
+					<th>Conformance</th>
+					<th>Parameter</th>
+					<th>Type</th>
+					<th>Modifiers</th>
+					<th>Includes</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>SHALL</td>
+					<td>recipient</td>
+					<td>reference</td>
+					<td/>
+					<td>CommunicationRequest.subject</td>
+				</tr>
+				<tr>
+					<td>SHALL</td>
+					<td>recipient + date</td>
+					<td>reference + date</td>
+					<td>date modifiers 'ge'</td>
+					<td/>
+				</tr>				
+			</tbody>
+		</table>
+		
+		<h5 id="parameters" class="no_toc">10. Parameters</h5>	
+		<p>Required Profiles:  <a href="http://hl7.org/fhir/StructureDefinition/Paramenters"> FHIR Parameters</a></p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning all of Parameters information over a specified tag using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Parameters?_tag={tag}</code></p>
+			</li>			
+		</ul>
+		<p>Search Parameters:</p>
+		<table class="grid">
+			<thead>
+				<tr>
+					<th>Conformance</th>
+					<th>Parameter</th>
+					<th>Type</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>SHALL</td>
+					<td>_tag</td>
+					<td>string</td>					
+				</tr>
+			</tbody>
+		</table>
+		<h5 id="medicationrequest" class="no_toc">11. MedicationRequest</h5>
+		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_MedicationRequest_1.structuredefinition.xml">NurseAide MedicationRequest Profile</a></p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning medication requests using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester</code></p>
+			</li>											
+		</ul>
+		<h5 id="nutritionorder" class="no_toc">12. NutritionOrder</h5>
+		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_NutritionOrder_1.structuredefinition.xml">NurseAide NutritionOrder Profile</a></p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning nutrition orders using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester</code></p>
+			</li>											
+		</ul>
+		<h5 id="procedurerequest" class="no_toc">13. ProcedureRequest</h5>
+		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_ProcedureRequest_1.structuredefinition.xml">NurseAide ProcedureRequest Profile</a></p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning procedure requests using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester</code></p>
+			</li>											
+		</ul>
+		<h5 id="diagnosticreport" class="no_toc">14. DiagnosticReport</h5>
+		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_DiagnosticReport_1.structuredefinition.xml">NurseAide DiagnosticReport Profile</a></p>
+		<p>Search Criteria:</p>
+		<ul>
+			<li>
+				<p>A server <strong>SHALL</strong> be capable of returning diagnostic reports using:</p>
+				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester&#38;_include:recurse=Procedure.report</code></p>
+			</li>			
+		</ul>	
+	</div>
+  </text>
+  <url value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/CapabilityStatement/DXC_HC_NurseAide_client_1.capabilitystatement.xml"/>
+  <version value="1.0.0"/>
+  <name value="NurseAide FHIR Client"/>
+  <status value="draft"/>
+  <date value="2017-06-01"/>
+  <publisher value="DXC Technology"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://www.dxc.technology/"/>
+    </telecom>
+  </contact>
+  <description value="This profile defines the capabilities that the NurseAide client application expects from a FHIR server"/>
+  <kind value="requirements"/>
+  <fhirVersion value="3.0.0"/>
+  <acceptUnknown value="extensions"/>
+  <format value="xml"/>
+  <format value="json"/>
+  <profile>
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Patient_1.structuredefinition.xml"/>
+    <display value="NurseAide Patient Profile"/>
+  </profile>
+  <profile>	
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Encounter_1.structuredefinition.xml"/>
+    <display value="NurseAide Encounter Profile"/>
+  </profile>
+  <profile>	
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Practitioner_1.structuredefinition.xml"/>
+    <display value="NurseAide Practitioner Profile"/>
+  </profile>
+  <profile>
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Location_1.structuredefinition.xml"/>
+    <display value="NurseAide Location Profile"/>
+  </profile>
+  <profile>
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Task_1.structuredefinition.xml"/>
+    <display value="NurseAide Task Profile"/>
+  </profile>
+  <profile>
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_DetectedIssue_1.structuredefinition.xml"/>
+    <display value="NurseAide DetectedIssue Profile"/>
+  </profile>
+  <profile>
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_MedicationAdministration_1.structuredefinition.xml"/>
+    <display value="NurseAide MedicationAdministration Profile"/>
+  </profile>
+  <profile>
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_MedicationRequest_1.structuredefinition.xml"/>
+    <display value="NurseAide MedicationRequest Profile"/>
+  </profile>
+  <profile>
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Procedure_1.structuredefinition.xml"/>
+    <display value="NurseAide Procedure Profile"/>
+  </profile>
+  <profile>
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_ProcedureRequest_1.structuredefinition.xml"/>
+    <display value="NurseAide ProcedureRequest Profile"/>
+  </profile>
+  <profile>
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Observation_1.structuredefinition.xml"/>
+    <display value="NurseAide Observation Profile"/>
+  </profile>
+  <profile>
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_NutritionOrder_1.structuredefinition.xml"/>
+    <display value="NurseAide NutritionOrder Profile"/>
+  </profile>
+  <profile>
+    <reference value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_CommunicationRequest_1.structuredefinition.xml"/>
+    <display value="NurseAide CommunicationRequest Profile"/>
+  </profile>
+  <rest>
+    <mode value="client"/>
+    <resource>
+      <type value="Encounter"/>
+	  <profile>
+        <reference value="https://simplifier.net/DXCNurseAide/DXCHCEncounter1" />		
+      </profile>
+	  <extension
+                 url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination">
+        <extension url="required">
+          <valueString value="location"/>
+        </extension>
+        <extension url="required">
+          <valueString value="location-period"/>
+        </extension>
+      </extension>      
+      <interaction>        
+        <code value="search-type"/>
+        <documentation value="Allows discovery Encounters resources using location search criteria"/>
+      </interaction>
+	  <searchParam>
+		<name value="location" />
+		<definition value="http://hl7.org/fhir/SearchParameter/encounter-location" />
+		<type value="reference" />
+		<documentation value="Where do/did encounter occur?"/>
+	  </searchParam>
+	  <searchParam>
+        <name value="location-period" />
+        <definition value="http://hl7.org/fhir/SearchParameter/encounter-location-period" />
+        <type value="date" />
+        <documentation value="When do/did encounter occur?" />
+      </searchParam>
+	  <searchInclude value="Encounter:patient" />
+	  <searchInclude value="Encounter:location" />
+	</resource>
+	<resource>
+	  <type value="Task"/>	
+	  <profile>
+        <reference value="https://simplifier.net/DXCNurseAide/DXCHCTask1" />		
+      </profile>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination">
+        <extension url="required">
+          <valueString value="context"/>
+        </extension>
+        <extension url="required">
+          <valueString value="scheduledTime"/>
+        </extension>
+      </extension>
+	  <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination">
+        <extension url="required">
+          <valueString value="context"/>
+        </extension>
+        <extension url="required">
+          <valueString value="status"/>
+        </extension>
+		<extension url="required">
+          <valueString value="scheduledTime"/>
+        </extension>
+      </extension>
+	  <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination">
+        <extension url="required">
+          <valueString value="_id"/>
+        </extension>        
+      </extension>
+	  <interaction>        
+        <code value="update"/>
+        <documentation value="Allows update Task resources"/>
+      </interaction>	
+      <interaction>        
+        <code value="search-type"/>
+        <documentation value="Allows discovery Task resources using different search criteria"/>
+      </interaction>
+	  <searchParam>
+		<name value="context" />
+		<definition value="http://hl7.org/fhir/SearchParameter/task-context" />
+		<type value="reference" />
+		<documentation value="Encounter on which the task is performed"/>
+	  </searchParam>
+	  <searchParam>
+        <name value="status" />
+        <definition value="http://hl7.org/fhir/SearchParameter/task-status" />
+        <type value="token" />
+        <documentation value="Task status" />
+      </searchParam>
+	  <searchParam>
+        <name value="scheduledTime" />
+        <definition value="http://hl7.org/fhir/SearchParameter/task-scheduledTime"/>
+        <type value="string" />
+        <documentation value="Date and time when the task is programmed" />
+      </searchParam>
+	  <searchParam>
+        <name value="scheduledTime" />
+        <definition value="http://hl7.org/fhir/SearchParameter/task-scheduledTime"/>
+        <type value="date" />
+        <documentation value="Date and time when the task is programmed" />
+      </searchParam>
+	  <searchInclude value="Task:focus" />
+	  <searchInclude value="Task:based-on" />
+	  <searchInclude value="Task:requester" />
+	  <searchInclude value="MedicationRequest:medication" />
+	  <searchInclude value="MedicationAdministration:medication" />
+	  <searchInclude value="Procedure.report" />
+	  <searchInclude value="DiagnosticReport.result" />
+	</resource>
+	<resource>
+      <type value="DetectedIssue"/>	   
+	  <profile>
+        <reference value="https://simplifier.net/DXCNurseAide/DXCHCDetectedIssue1" />		
+      </profile>
+      <interaction>        
+        <code value="search-type"/>
+        <documentation value="Allows discovery DetectedIssue resources using field 'implicated' as search criteria"/>
+      </interaction>
+	  <searchParam>
+		<name value="implicated" />
+		<definition value="http://hl7.org/fhir/SearchParameter/detectedissue-implicated" />
+		<type value="reference" />
+		<documentation value="Task to which the issues belongs"/>
+	  </searchParam>	  
+	</resource>
+	<resource>
+      <type value="Observation"/>
+	  <profile>
+        <reference value="https://simplifier.net/DXCNurseAide/DXCHCObservation1" />		
+      </profile>
+	  <extension
+                 url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination">
+        <extension url="required">
+          <valueString value="code"/>
+        </extension>
+        <extension url="required">
+          <valueString value="date"/>
+        </extension>
+		<extension url="required">
+          <valueString value="context"/>
+        </extension>
+      </extension>  
+	  <interaction>        
+        <code value="update"/>
+        <documentation value="Allows update Observations resources"/>
+      </interaction>	  
+      <interaction>        
+        <code value="search-type"/>
+        <documentation value="Allows discovery Observations resources using different search criteria"/>
+      </interaction>	  
+	  <searchParam>
+		<name value="code" />
+		<definition value="http://hl7.org/fhir/SearchParameter/observation-code" />
+		<type value="token" />
+		<documentation value="Code of observation"/>
+	  </searchParam>
+	  <searchParam>
+        <name value="date" />
+        <definition value="http://hl7.org/fhir/SearchParameter/observation-date" />
+        <type value="date" />
+        <documentation value="Date until which you want to find the observations. The date search modifier will be &#39;lt&#39; " />
+      </searchParam>
+	  <searchParam>
+		<name value="context" />
+		<definition value="http://hl7.org/fhir/SearchParameter/observation-context" />
+		<type value="reference" />
+		<documentation value="Encounter on which the observation is performed"/>
+	  </searchParam>	  
+	</resource> 
+	<resource>
+      <type value="Procedure"/>
+	  <profile>
+        <reference value="https://simplifier.net/DXCNurseAide/DXCHCProcedure1" />		
+      </profile>
+	  <extension
+                 url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination">
+        <extension url="required">
+          <valueString value="based-on"/>
+        </extension>
+        <extension url="required">
+          <valueString value="date"/>
+        </extension>		
+      </extension>  
+	  <interaction>        
+        <code value="update"/>
+        <documentation value="Allows update Procedure resources"/>
+      </interaction>	  
+      <interaction>        
+        <code value="search-type"/>
+        <documentation value="Allows discovery Procedure resources using different search criteria"/>
+      </interaction>	  
+	  <searchParam>
+		<name value="based-on" />
+		<definition value="http://hl7.org/fhir/SearchParameter/procedure-based-on" />
+		<type value="string" />
+		<documentation value="Request in which the procedure based on"/>
+	  </searchParam>
+	  <searchParam>
+        <name value="date" />
+        <definition value="http://hl7.org/fhir/SearchParameter/procedure-date" />
+        <type value="date" />
+        <documentation value="Date until which you want to find the procedures. The date search modifier will be &#39;lt&#39; " />
+      </searchParam>	  	  
+	</resource>
+	<resource>
+      <type value="MedicationAdministration"/>
+	  <profile>
+        <reference value="https://simplifier.net/DXCNurseAide/DXCHCMedicationAdministration1" />		
+      </profile>
+	  <extension
+                 url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination">
+        <extension url="required">
+          <valueString value="prescription"/>
+        </extension>
+        <extension url="required">
+          <valueString value="date"/>
+        </extension>		
+      </extension>  
+	  <interaction>        
+        <code value="update"/>
+        <documentation value="Allows update MedicationAdministration resources"/>
+      </interaction>	  
+      <interaction>        
+        <code value="search-type"/>
+        <documentation value="Allows discovery MedicationAdministration resources using different search criteria"/>
+      </interaction>	  
+	  <searchParam>
+		<name value="prescription" />
+		<definition value="http://hl7.org/fhir/SearchParameter/medicationadministration-prescription" />
+		<type value="reference" />
+		<documentation value="Prescription in which the administration based on"/>
+	  </searchParam>
+	  <searchParam>
+        <name value="date" />
+        <definition value="http://hl7.org/fhir/SearchParameter/medicationadministration-date" />
+        <type value="date" />
+        <documentation value="Date until which you want to find the administrations. The date search modifier will be &#39;lt&#39; " />
+      </searchParam>	  	  
+	</resource>
+	<resource>
+      <type value="Practitioner"/>	   
+	  <profile>
+        <reference value="https://simplifier.net/DXCNurseAide/DXCHCPractitioner1" />		
+      </profile>
+      <interaction>        
+        <code value="search-type"/>
+        <documentation value="Allows discovery Practitioner resources using field 'identifier' as search criteria"/>
+      </interaction>
+	  <searchParam>
+		<name value="identifier" />
+		<definition value="http://hl7.org/fhir/SearchParameter/practitioner-identifier" />
+		<type value="token" />
+		<documentation value="Identifier of the practitioner"/>
+	  </searchParam>	  
+	</resource>
+	<resource>
+      <type value="Parameters"/>	   
+      <interaction>        
+        <code value="search-type"/>
+        <documentation value="Allows discovery Parameters resources using field '_tag' as search criteria"/>
+      </interaction>
+	  <searchParam>
+		<name value="_tag" />
+		<definition value="http://hl7.org/fhir/SearchParameter/parameters-tag" />
+		<type value="string" />
+		<documentation value="Tag of the parameters"/>
+	  </searchParam>	  
+	</resource>
+	<resource>
+      <type value="CommunicationRequest"/>
+	  <profile>
+        <reference value="https://simplifier.net/DXCNurseAide/DXCHCCommunicationRequest1" />		
+      </profile>
+	  <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination">
+        <extension url="required">
+          <valueString value="recipient"/>
+        </extension>        
+      </extension>      
+	  <extension
+                 url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination">
+        <extension url="required">
+          <valueString value="recipient"/>
+        </extension>
+        <extension url="required">
+          <valueString value="authored"/>
+        </extension>
+		<extension url="required">
+          <valueString value="status"/>
+        </extension>
+      </extension>    
+	  <interaction>        
+        <code value="update"/>
+        <documentation value="Allows update CommunicationRequest resources"/>
+      </interaction>
+      <interaction>        
+        <code value="search-type"/>
+        <documentation value="Allows discovery CommunicationRequest resources using different search criteria"/>
+      </interaction>
+	  <searchParam>
+		<name value="recipient" />
+		<definition value="http://hl7.org/fhir/SearchParameter/communicationrequest-recipient" />
+		<type value="reference" />
+		<documentation value="Professional to whom the message is addressed"/>
+	  </searchParam>
+	  <searchParam>
+        <name value="authored" />
+        <definition value="http://hl7.org/fhir/SearchParameter/communicationrequest-authored" />
+        <type value="date" />
+        <documentation value="Date from which you want to find the observations. The date search modifier will be &#39;ge&#39; " />
+      </searchParam>
+	  <searchParam>
+		<name value="status" />
+		<definition value="http://hl7.org/fhir/SearchParameter/communicationrequest-status" />
+		<type value="token" />
+		<documentation value="Status of the communication"/>
+	  </searchParam>
+	  <searchInclude value="CommunicationRequest:subject" />
+	</resource>       
+  </rest>
+</CapabilityStatement>
