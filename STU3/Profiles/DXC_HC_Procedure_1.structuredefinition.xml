@@ -1,8 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="25868b7e-c887-422c-a131-84c1a4b4e854" />
   <meta>
     <versionId value="2" />
-    <lastUpdated value="2017-05-30T15:57:54.534+02:00" />
+    <lastUpdated value="2017-06-08T08:47:44.002+02:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="pc" />

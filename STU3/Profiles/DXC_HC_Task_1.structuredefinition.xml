@@ -1,11 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="03c16dbd-e8c9-40b7-958e-3e057847c2d8" />
   <meta>
-    <lastUpdated value="2017-05-25T11:22:00.567+02:00" />
+    <versionId value="2" />
+    <lastUpdated value="2017-06-08T08:44:07.036+02:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="oo" />
   </extension>
-  <url value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Task_1" />
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Task_1" />
   <version value="1" />
   <name value="DXC_HC_Task_1" />
   <status value="draft" />
@@ -267,7 +270,7 @@
       <alias value="anonymous resources" />
       <alias value="contained resources" />
       <min value="0" />
-      <max value="0" />
+      <max value="*" />
       <base>
         <path value="DomainResource.contained" />
         <min value="0" />
@@ -352,9 +355,8 @@
       </base>
       <type>
         <code value="Extension" />
-        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ShortDescription_1_Ext" />
+        <profile value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Extensions/DXC_HC_ShortDescription_1_Ext.structuredefinition.xml" />
       </type>
-      <fixedUri value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ShortDescription_1_Ext" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -397,9 +399,8 @@
       </base>
       <type>
         <code value="Extension" />
-        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ScheduledTime_1_Ext" />
+        <profile value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Extensions/DXC_HC_ScheduledTime_1_Ext.structuredefiinition.xml" />
       </type>
-      <fixedUri value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ScheduledTime_1_Ext" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -1775,7 +1776,7 @@
     <element id="Task.basedOn">
       <path value="Task.basedOn" />
       <short value="Request fulfilled by this task" />
-      <definition value="BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a &quot;request&quot; resource such as a ProcedureRequest, MedicationRequest, ProcedureRequest, CarePlan, etc. which is distinct from the &quot;request&quot; resource the task is seeking to fulfil.  This latter resource is referenced by FocusOn.  For example, based on a ProcedureRequest (= BasedOn), a task is created to fulfil a procedureRequest ( = FocusOn ) to collect a specimen from a patient." />
+      <definition value="BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a &quot;request&quot; resource such as a ProcedureRequest, MedicationRequest or NutritionOrder. " />
       <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." />
       <min value="0" />
       <max value="*" />
@@ -1786,7 +1787,18 @@
       </base>
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
+        <profile value="DXC_HC_ProcedureRequest_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_ProcedureRequest_1" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_MedicationRequest_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_MedicationRequest_1" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_NutritionOrder_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_NutritionOrder_1" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -5268,7 +5280,7 @@
     <element id="Task.focus">
       <path value="Task.focus" />
       <short value="What task is acting on" />
-      <definition value="The request being actioned or the resource being manipulated by this task." />
+      <definition value="The resource being manipulated by this task. It should be a Procedure, a Observation or a MedicationAdministration" />
       <comment value="If multiple resources need to be manipulated, use sub-tasks.  (This ensures that status can be tracked independently for each referenced resource.)." />
       <requirements value="Used to identify the thing to be done." />
       <min value="0" />
@@ -5280,7 +5292,18 @@
       </base>
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
+        <profile value="DXC_HC_Procedure_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Procedure_1" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_Observation_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Observation_1" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_MedicationAdministration_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_MedicationAdministration_1" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -5524,7 +5547,8 @@
       </base>
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
+        <profile value="DXC_HC_Patient_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Patient_1" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -5771,11 +5795,8 @@
       </base>
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Encounter" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" />
+        <profile value="DXC_HC_Encounter_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Encounter_1" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -7507,23 +7528,8 @@
       </base>
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+        <profile value="DXC_HC_Practitioner_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Practitioner_1" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -11070,10 +11076,6 @@
       <max value="0" />
     </element>
     <element>
-      <path value="Task.contained" />
-      <max value="0" />
-    </element>
-    <element>
       <path value="Task.extension" />
       <slicing>
         <discriminator>
@@ -11086,15 +11088,17 @@
     <element id="Task.extension:shortDescription">
       <path value="Task.extension" />
       <sliceName value="shortDescription" />
+      <short value="Optional Extensions Element" />
+      <definition value="Optional Extension Element - found in all resources." />
       <requirements value="A short description is necessary to show the task in a list of task, where we could have little space. " />
       <min value="1" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ShortDescription_1_Ext" />
+        <profile value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Extensions/DXC_HC_ShortDescription_1_Ext.structuredefinition.xml" />
       </type>
     </element>
-    <element>
+    <element id="Task.extension:scheduledTime">
       <path value="Task.extension" />
       <sliceName value="scheduledTime" />
       <short value="Optional Extensions Element" />
@@ -11104,7 +11108,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ScheduledTime_1_Ext" />
+        <profile value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Extensions/DXC_HC_ScheduledTime_1_Ext.structuredefiinition.xml" />
       </type>
     </element>
     <element>
@@ -11114,6 +11118,25 @@
     <element>
       <path value="Task.definition[x]" />
       <max value="0" />
+    </element>
+    <element>
+      <path value="Task.basedOn" />
+      <definition value="BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a &quot;request&quot; resource such as a ProcedureRequest, MedicationRequest or NutritionOrder. " />
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_ProcedureRequest_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_ProcedureRequest_1" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_MedicationRequest_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_MedicationRequest_1" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_NutritionOrder_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_NutritionOrder_1" />
+      </type>
     </element>
     <element>
       <path value="Task.groupIdentifier" />
@@ -11140,8 +11163,40 @@
       <min value="1" />
     </element>
     <element>
+      <path value="Task.focus" />
+      <definition value="The resource being manipulated by this task. It should be a Procedure, a Observation or a MedicationAdministration" />
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_Procedure_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Procedure_1" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_Observation_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Observation_1" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_MedicationAdministration_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_MedicationAdministration_1" />
+      </type>
+    </element>
+    <element>
       <path value="Task.for" />
       <min value="1" />
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_Patient_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Patient_1" />
+      </type>
+    </element>
+    <element>
+      <path value="Task.context" />
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_Encounter_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Encounter_1" />
+      </type>
     </element>
     <element>
       <path value="Task.authoredOn" />
@@ -11150,6 +11205,14 @@
     <element>
       <path value="Task.performerType" />
       <max value="0" />
+    </element>
+    <element>
+      <path value="Task.owner" />
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_Practitioner_1" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Practitioner_1" />
+      </type>
     </element>
     <element>
       <path value="Task.reason" />

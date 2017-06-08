@@ -21,6 +21,7 @@
 					<th>Supported Searches</th>
 					<th>Supported Includes</th>
 					<th>Supported Includes Recurse</th>
+					<th>Supported Revincludes</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -30,11 +31,13 @@
 					<td>identifier</td>
 					<td/>
 					<td/>
+					<td/>
 				</tr>
 				<tr>
 					<td><a href="#parameters">Parameters</a></td>
 					<td>FHIR Paramenters resource</td>
 					<td>_tag</td>
+					<td/>
 					<td/>
 					<td/>
 				</tr>
@@ -44,6 +47,7 @@
 					<td>location, location-period</td>
 					<td>Encounter:patient, Encounter:location</td>
 					<td/>
+					<td/>
 				</tr>
 				<tr>
 					<td><a href="#task">Task</a></td>
@@ -51,18 +55,14 @@
 					<td>context + status + scheduledTime + _sort + _count, _id</td>
 					<td>Task:focus, Task:based-on, Task:requester</td>
 					<td>MedicationRequest:medication, MedicationAdministration:medication, Procedure.report, DiagnosticReport.result</td>
+					<td>DetectedIssue:implicated</td>
 				</tr>
-				<tr>
-					<td><a href="#detectedIssue">DetectedIssue</a></td>
-					<td>NurseAide DetectedIssue Profile</td>
-					<td>implicated</td>
-					<td/>
-					<td/>
-				</tr>
+				
 				<tr>
 					<td><a href="#observation">Observation</a></td>
 					<td>NurseAide Observation Profile</td>
 					<td>code + date + context + _sort + _count</td>
+					<td/>
 					<td/>
 					<td/>
 				</tr>
@@ -72,11 +72,13 @@
 					<td>based-on + date + _sort + _count</td>
 					<td/>
 					<td/>
+					<td/>
 				</tr>
 				<tr>
 					<td><a href="#medicationAdministration">MedicationAdministration</a></td>
 					<td>NurseAide MedicationAdministration Profile</td>
 					<td>prescription + date + _sort + _count</td>
+					<td/>
 					<td/>
 					<td/>
 				</tr>
@@ -85,6 +87,7 @@
 					<td>NurseAide CommunicationRequest Profile</td>
 					<td>recipient, recipient + authored + status</td>
 					<td>CommunicationRequest.subject</td>
+					<td/>
 					<td/>
 				</tr>				
 			</tbody>
@@ -172,7 +175,7 @@
 		<ul>
 			<li>
 				<p>A server <strong>SHALL</strong> be capable of returning all tasks of a patient's encounter over a specified time period using:</p>
-				<p><code class="highlighter-rouge">Get [base]/Task?context={encounterId}&#38;scheduledTime= ge{lowerLimit}&#38;scheduledTime=le{upperLimit}</code></p>
+				<p><code class="highlighter-rouge">Get [base]/Task?context={encounterId}&#38;scheduledTime= ge{lowerLimit}&#38;scheduledTime=le{upperLimit}&#38;_include=Task:based-on&#38;_revinclude=DetectedIssue:implicated</code></p>
 			</li>
 			<li>
 				<p>A server <strong>SHALL</strong> be capable of returning the first pending task of a patient's encounter over a specified time period using:</p>
@@ -180,7 +183,7 @@
 			</li>
 			<li>
 				<p>A server <strong>SHALL</strong> be capable returning a task information using</p>
-				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester</code></p>
+				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester&#38;_revinclude=DetectedIssue:implicated</code></p>
 			</li>			
 		</ul>
 		<p>Search Parameters:</p>
@@ -192,6 +195,7 @@
 					<th>Type</th>
 					<th>Modifiers</th>
 					<th>Includes</th>
+					<th>Revincludes</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -200,13 +204,15 @@
 					<td>context + scheduledTime</td>
 					<td>reference + date</td>
 					<td>date modifiers 'ge','le'</td>
-					<td/>
+					<td>Task:based-on</td>	
+					<td>DetectedIssue:implicated</td>	
 				</tr>
 				<tr>
 					<td>SHALL</td>
 					<td>context + status + scheduledTime</td>
 					<td>reference + date</td>
 					<td>date modifiers 'ge','le'</td>
+					<td/>
 					<td/>
 				</tr>
 				<tr>
@@ -215,38 +221,11 @@
 					<td>string</td>
 					<td/>
 					<td>Task:focus, Task:based-on, Task:requester</td>					
+					<td>DetectedIssue:implicated</td>	
 				</tr>				
 			</tbody>
 		</table>
-		<h5 id="detectedIssue" class="no_toc">5. DetectedIssue</h5>
-		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_DetectedIssue_1.structuredefinition.xml">NurseAide DetectedIssue Profile</a></p>
-		<p>Search Criteria:</p>
-		<ul>
-			<li>
-				<p>A server <strong>SHALL</strong> be capable of returning all detected issues of a task using:</p>
-				<p><code class="highlighter-rouge">Get [base]/DetectedIssue?implicated={taskId}</code></p>
-			</li>			
-		</ul>
-		<p>Search Parameters:</p>
-		<table class="grid">
-			<thead>
-				<tr>
-					<th>Conformance</th>
-					<th>Parameter</th>
-					<th>Type</th>					
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>SHALL</td>
-					<td>implicated</td>
-					<td>reference</td>					
-				</tr>				
-			</tbody>
-		</table>
-		
-		
-		<h5 id="observation" class="no_toc">6. Observation</h5>
+		<h5 id="observation" class="no_toc">5. Observation</h5>
 		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Observation_1.structuredefinition.xml">NurseAide Observation Profile</a></p>
 		<p>Search Criteria:</p>
 		<ul>
@@ -280,7 +259,7 @@
 		</table>
 	
 	
-		<h5 id="procedure" class="no_toc">7. Procedure</h5>
+		<h5 id="procedure" class="no_toc">6. Procedure</h5>
 		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Procedure_1.structuredefinition.xml">NurseAide Procedure Profile</a></p>
 		<p>Search Criteria:</p>
 		<ul>
@@ -313,7 +292,7 @@
 			</tbody>
 		</table>
 		
-		<h5 id="medicationAdministration" class="no_toc">8. MedicationAdministration</h5>
+		<h5 id="medicationAdministration" class="no_toc">7. MedicationAdministration</h5>
 		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_MedicationAdministration_1.structuredefinition.xml">NurseAide MedicationAdministration Profile</a></p>
 		<p>Search Criteria:</p>
 		<ul>
@@ -346,7 +325,7 @@
 			</tbody>
 		</table>
 	
-		<h5 id="communicationRequest" class="no_toc">9. CommunicationRequest</h5>
+		<h5 id="communicationRequest" class="no_toc">8. CommunicationRequest</h5>
 		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_CommunicationRequest_1.structuredefinition.xml">NurseAide CommunicationRequest Profile</a></p>
 		<p>Search Criteria:</p>
 		<ul>
@@ -388,7 +367,7 @@
 			</tbody>
 		</table>
 		
-		<h5 id="parameters" class="no_toc">10. Parameters</h5>	
+		<h5 id="parameters" class="no_toc">9. Parameters</h5>	
 		<p>Required Profiles:  <a href="http://hl7.org/fhir/StructureDefinition/Paramenters"> FHIR Parameters</a></p>
 		<p>Search Criteria:</p>
 		<ul>
@@ -414,7 +393,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<h5 id="medicationrequest" class="no_toc">11. MedicationRequest</h5>
+		<h5 id="medicationrequest" class="no_toc">10. MedicationRequest</h5>
 		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_MedicationRequest_1.structuredefinition.xml">NurseAide MedicationRequest Profile</a></p>
 		<p>Search Criteria:</p>
 		<ul>
@@ -423,7 +402,7 @@
 				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester</code></p>
 			</li>											
 		</ul>
-		<h5 id="nutritionorder" class="no_toc">12. NutritionOrder</h5>
+		<h5 id="nutritionorder" class="no_toc">11. NutritionOrder</h5>
 		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_NutritionOrder_1.structuredefinition.xml">NurseAide NutritionOrder Profile</a></p>
 		<p>Search Criteria:</p>
 		<ul>
@@ -432,7 +411,7 @@
 				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester</code></p>
 			</li>											
 		</ul>
-		<h5 id="procedurerequest" class="no_toc">13. ProcedureRequest</h5>
+		<h5 id="procedurerequest" class="no_toc">12. ProcedureRequest</h5>
 		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_ProcedureRequest_1.structuredefinition.xml">NurseAide ProcedureRequest Profile</a></p>
 		<p>Search Criteria:</p>
 		<ul>
@@ -441,7 +420,7 @@
 				<p><code class="highlighter-rouge">Get [base]/Task?_id={id}&#38;_include=Task:focus&#38;_include=Task:based-on&#38;_include=Task:requester</code></p>
 			</li>											
 		</ul>
-		<h5 id="diagnosticreport" class="no_toc">14. DiagnosticReport</h5>
+		<h5 id="diagnosticreport" class="no_toc">13. DiagnosticReport</h5>
 		<p>Required Profiles:  <a href="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_DiagnosticReport_1.structuredefinition.xml">NurseAide DiagnosticReport Profile</a></p>
 		<p>Search Criteria:</p>
 		<ul>
@@ -608,16 +587,10 @@
       </searchParam>
 	  <searchParam>
         <name value="scheduledTime" />
-        <definition value="http://hl7.org/fhir/SearchParameter/task-scheduledTime"/>
+        <definition value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ScheduledTime_1_Ext"/>
         <type value="string" />
         <documentation value="Date and time when the task is programmed" />
-      </searchParam>
-	  <searchParam>
-        <name value="scheduledTime" />
-        <definition value="http://hl7.org/fhir/SearchParameter/task-scheduledTime"/>
-        <type value="date" />
-        <documentation value="Date and time when the task is programmed" />
-      </searchParam>
+      </searchParam>	  
 	  <searchInclude value="Task:focus" />
 	  <searchInclude value="Task:based-on" />
 	  <searchInclude value="Task:requester" />
@@ -625,23 +598,8 @@
 	  <searchInclude value="MedicationAdministration:medication" />
 	  <searchInclude value="Procedure.report" />
 	  <searchInclude value="DiagnosticReport.result" />
-	</resource>
-	<resource>
-      <type value="DetectedIssue"/>	   
-	  <profile>
-        <reference value="https://simplifier.net/DXCNurseAide/DXCHCDetectedIssue1" />		
-      </profile>
-      <interaction>        
-        <code value="search-type"/>
-        <documentation value="Allows discovery DetectedIssue resources using field 'implicated' as search criteria"/>
-      </interaction>
-	  <searchParam>
-		<name value="implicated" />
-		<definition value="http://hl7.org/fhir/SearchParameter/detectedissue-implicated" />
-		<type value="reference" />
-		<documentation value="Task to which the issues belongs"/>
-	  </searchParam>	  
-	</resource>
+	  <searchRevinclude value="DetectedIssue:implicated" />
+	</resource>	
 	<resource>
       <type value="Observation"/>
 	  <profile>

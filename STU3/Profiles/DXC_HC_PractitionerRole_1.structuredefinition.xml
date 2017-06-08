@@ -556,7 +556,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Practitioner_1" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -773,7 +773,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Location_1" />
       </type>
       <condition value="ele-1" />
       <constraint>

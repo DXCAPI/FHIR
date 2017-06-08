@@ -1,6 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-05-25T13:07:33.591+02:00" />
+    <lastUpdated value="2017-06-08T08:49:27.777+02:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="phx" />
@@ -275,7 +276,7 @@
       <alias value="anonymous resources" />
       <alias value="contained resources" />
       <min value="0" />
-      <max value="0" />
+      <max value="*" />
       <base>
         <path value="DomainResource.contained" />
         <min value="0" />
@@ -2802,11 +2803,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Patient_1" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -8759,10 +8756,6 @@
       <max value="0" />
     </element>
     <element>
-      <path value="MedicationAdministration.contained" />
-      <max value="0" />
-    </element>
-    <element>
       <path value="MedicationAdministration.identifier" />
       <max value="0" />
     </element>
@@ -8777,6 +8770,13 @@
     <element>
       <path value="MedicationAdministration.category" />
       <max value="0" />
+    </element>
+    <element>
+      <path value="MedicationAdministration.subject" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Patient_1" />
+      </type>
     </element>
     <element>
       <path value="MedicationAdministration.context" />

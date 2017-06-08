@@ -1,11 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-05-25T13:15:29.849+02:00" />
+    <lastUpdated value="2017-06-07T16:44:46.52+02:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="oo" />
   </extension>
-  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Observation_1" />
+  <url value="https://github.com/DXCAPI/FHIR/blob/develop/STU3/Profiles/DXC_HC_Observation_1.structuredefinition.xml" />
   <version value="1" />
   <name value="DXC_HC_Observation_1" />
   <status value="draft" />
@@ -246,7 +247,7 @@
       <alias value="html" />
       <alias value="xhtml" />
       <alias value="display" />
-      <min value="1" />
+      <min value="0" />
       <max value="1" />
       <base>
         <path value="DomainResource.text" />
@@ -287,7 +288,7 @@
       <alias value="anonymous resources" />
       <alias value="contained resources" />
       <min value="0" />
-      <max value="0" />
+      <max value="*" />
       <base>
         <path value="DomainResource.contained" />
         <min value="0" />
@@ -3942,7 +3943,7 @@
       </mapping>
     </element>
     <element id="Observation.value[x]">
-      <path value="Observation.valueQuantity" />
+      <path value="Observation.value[x]" />
       <short value="Actual result" />
       <definition value="The information determined as a result of making the observation, if the information has a simple value." />
       <comment value="Normally, an observation will have either a single value or a set of related observations. A few observations (e.g. Apgar score) may have both a value and related observations (for an Apgar score, the observations from which the measure is derived). If a value is present, the datatype for this element should be determined by Observation.code. This element has a variable name depending on the type as follows: valueQuantity, valueCodeableConcept, valueString, valueBoolean, valueRange, valueRatio, valueSampledData, valueAttachment, valueTime, valueDateTime, or valuePeriod. (The name format is &quot;'value' + the type name&quot; with a capital on the first letter of the type).&#xD;&#xD;&#xD;If the data element is usually coded or if the type associated with the Observation.value defines a coded value, use CodeableConcept instead of string datatype even if the value is uncoded text.  A value set is bound to the ValueCodeableConcept element.    For further discussion and examples see the  [notes section](observation.html#notes) below." />
@@ -3956,6 +3957,36 @@
       </base>
       <type>
         <code value="Quantity" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="boolean" />
+      </type>
+      <type>
+        <code value="Range" />
+      </type>
+      <type>
+        <code value="Ratio" />
+      </type>
+      <type>
+        <code value="SampledData" />
+      </type>
+      <type>
+        <code value="Attachment" />
+      </type>
+      <type>
+        <code value="time" />
+      </type>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <type>
+        <code value="Period" />
       </type>
       <condition value="ele-1" />
       <condition value="obs-7" />
@@ -11780,14 +11811,6 @@
       <max value="0" />
     </element>
     <element>
-      <path value="Observation.text" />
-      <min value="1" />
-    </element>
-    <element>
-      <path value="Observation.contained" />
-      <max value="0" />
-    </element>
-    <element>
       <path value="Observation.identifier" />
       <max value="0" />
     </element>
@@ -11820,12 +11843,6 @@
     <element>
       <path value="Observation.performer" />
       <max value="1" />
-    </element>
-    <element>
-      <path value="Observation.valueQuantity" />
-      <type>
-        <code value="Quantity" />
-      </type>
     </element>
     <element>
       <path value="Observation.dataAbsentReason" />
