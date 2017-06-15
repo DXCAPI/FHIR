@@ -1,8 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="62e90a44-25ea-4be4-b761-98facea772b7" />
   <meta>
     <versionId value="1" />
-    <lastUpdated value="2017-05-31T16:01:18.965+02:00" />
+    <lastUpdated value="2017-06-14T15:02:56.264+02:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="pa" />
@@ -389,8 +390,8 @@
       <short value="A identifier for the person as this agent" />
       <definition value="An identifier that applies to this person in this role." />
       <requirements value="Often, specific identities are assigned for the agent." />
-      <min value="0" />
-      <max value="0" />
+      <min value="1" />
+      <max value="1" />
       <base>
         <path value="Practitioner.identifier" />
         <min value="0" />
@@ -7095,7 +7096,8 @@
     </element>
     <element>
       <path value="Practitioner.identifier" />
-      <max value="0" />
+      <min value="1" />
+      <max value="1" />
     </element>
     <element>
       <path value="Practitioner.active" />
