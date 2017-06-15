@@ -1,0 +1,55 @@
+<SearchParameter xmlns="http://hl7.org/fhir">
+  <id value="scheduledTime" />
+  <text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>id</b>: scheduledTime</p>
+      <p>
+        <b>url</b>: <a>https://simplifier.net/DXCNurseAide/DXCHCScheduledTime1Search</a></p>
+      <p>
+        <b>name</b>: scheduledTime</p>
+      <p>
+        <b>status</b>: draft</p>
+      <p>
+        <b>experimental</b>: true</p>
+      <p>
+        <b>publisher</b>: DXC HC</p>
+      <p>
+        <b>code</b>: scheduledTime</p>
+      <p>
+        <b>base</b>: Task</p>
+      <p>
+        <b>type</b>: date</p>
+      <p>
+        <b>description</b>: When a task has been scheduled to be performed </p>
+      <p>
+        <b>expression</b>: Task.extension('https://simplifier.net/DXCNurseAide/DXCHCScheduledTime1Ext')</p>
+      <p>
+        <b>xpath</b>: f:Task/f:extension[@url='https://simplifier.net/DXCNurseAide/DXCHCScheduledTime1Ext']</p>
+      <p>
+        <b>xpathUsage</b>: normal</p>
+      <p>
+        <b>comparator</b>: lt, gt, le, ge </p>
+    </div>
+  </text>
+  <url value="https://simplifier.net/DXCNurseAide/DXCHCScheduledTime1Search" />
+  <name value="scheduledTime" />
+  <status value="draft" />
+  <experimental value="true" />
+  <publisher value="DXC HC" />
+  <code value="scheduledTime" />
+  <base value="Task" />
+  <type value="date" />
+  <description value="When a task has been scheduled to be performed" />
+  <expression value="Task.extension('https://simplifier.net/DXCNurseAide/DXCHCScheduledTime1Ext')" />
+  <xpath value="f:DocumentReference/f:extension[@url='https://simplifier.net/DXCNurseAide/DXCHCScheduledTime1Ext']" />
+  <xpathUsage value="normal" />
+  <comparator value="lt" />
+  <comparator value="gt" />
+  <comparator value="le" />
+  <comparator value="ge" />
+</SearchParameter>
