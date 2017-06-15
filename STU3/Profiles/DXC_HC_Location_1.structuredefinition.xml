@@ -3,7 +3,7 @@
   <id value="99d45c9f-f2b4-4c00-8a84-dd05a304dda0" />
   <meta>
     <versionId value="1" />
-    <lastUpdated value="2017-06-14T12:57:27.921+02:00" />
+    <lastUpdated value="2017-06-14T13:01:43.008+02:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="pa" />
@@ -1636,7 +1636,7 @@
       <definition value="The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location." />
       <comment value="This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Location.status" />
         <min value="0" />
@@ -5502,10 +5502,6 @@
     </element>
     <element>
       <path value="Location.identifier" />
-      <max value="0" />
-    </element>
-    <element>
-      <path value="Location.status" />
       <max value="0" />
     </element>
     <element>
