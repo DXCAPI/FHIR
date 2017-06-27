@@ -7,11 +7,11 @@
         <b>Generated Narrative with Details</b>
       </p>
       <p>
-        <b>id</b>: scheduledTime</p>
+        <b>id</b>: start</p>
       <p>
-        <b>url</b>: <a>https://simplifier.net/DXCNurseAide/DXCHCScheduledTime1Search</a></p>
+        <b>url</b>: <a>https://simplifier.net/DXCNurseAide/DXCHCStart1Search</a></p>
       <p>
-        <b>name</b>: scheduledTime</p>
+        <b>name</b>: start</p>
       <p>
         <b>status</b>: draft</p>
       <p>
@@ -19,7 +19,7 @@
       <p>
         <b>publisher</b>: DXC HC</p>
       <p>
-        <b>code</b>: scheduledTime</p>
+        <b>code</b>: start</p>
       <p>
         <b>base</b>: Task</p>
       <p>
@@ -27,26 +27,26 @@
       <p>
         <b>description</b>: When a task has been scheduled to be performed </p>
       <p>
-        <b>expression</b>: Task.extension('https://simplifier.net/DXCNurseAide/DXCHCScheduledTime1Ext')</p>
+        <b>expression</b>: Task.restriction.period.start</p>
       <p>
-        <b>xpath</b>: f:Task/f:extension[@url='https://simplifier.net/DXCNurseAide/DXCHCScheduledTime1Ext']</p>
+        <b>xpath</b>: f:Task/f:restriction/f:period/f:start</p>
       <p>
         <b>xpathUsage</b>: normal</p>
       <p>
         <b>comparator</b>: lt, gt, le, ge </p>
     </div>
   </text>
-  <url value="https://simplifier.net/DXCNurseAide/DXCHCScheduledTime1Search" />
-  <name value="scheduledTime" />
+  <url value="https://simplifier.net/DXCNurseAide/DXCHCStart1Search" />
+  <name value="start" />
   <status value="draft" />
   <experimental value="true" />
   <publisher value="DXC HC" />
-  <code value="scheduledTime" />
+  <code value="start" />
   <base value="Task" />
   <type value="date" />
   <description value="When a task has been scheduled to be performed" />
-  <expression value="Task.extension('https://simplifier.net/DXCNurseAide/DXCHCScheduledTime1Ext')" />
-  <xpath value="f:DocumentReference/f:extension[@url='https://simplifier.net/DXCNurseAide/DXCHCScheduledTime1Ext']" />
+  <expression value="Task.restriction.period.start" />
+  <xpath value="f:Task/f:restriction/f:period/f:start" />
   <xpathUsage value="normal" />
   <comparator value="lt" />
   <comparator value="gt" />
