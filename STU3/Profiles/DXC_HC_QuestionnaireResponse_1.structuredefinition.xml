@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-08-30T10:21:53.726+02:00" />
+    <lastUpdated value="2017-09-14T15:17:21.268+02:00" />
   </meta>
   <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_QuestionnaireResponse_1" />
   <name value="DXC_HC_QuestionnaireResponse_1" />
@@ -2415,7 +2415,7 @@
       <alias value="Patient" />
       <alias value="Focus" />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="QuestionnaireResponse.subject" />
         <min value="0" />
@@ -2658,7 +2658,7 @@
       <comment value="A questionnaire that was initiated during an encounter but not fully completed during the encounter would still generally be associated with the encounter." />
       <requirements value="Provides context for the information that was captured.  May also affect access control." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="QuestionnaireResponse.context" />
         <min value="0" />
@@ -2952,8 +2952,8 @@
       <alias value="Department" />
       <alias value="Company" />
       <alias value="Performer" />
-      <min value="0" />
-      <max value="0" />
+      <min value="1" />
+      <max value="1" />
       <base>
         <path value="QuestionnaireResponse.author" />
         <min value="0" />
@@ -3207,8 +3207,8 @@
       <definition value="The person who answered the questions about the subject." />
       <comment value="If not specified, no inference can be made about who provided the data." />
       <requirements value="When answering questions about a subject that is minor, incapable of answering or an animal, another human source may answer the questions." />
-      <min value="1" />
-      <max value="1" />
+      <min value="0" />
+      <max value="0" />
       <base>
         <path value="QuestionnaireResponse.source" />
         <min value="0" />
@@ -4243,25 +4243,17 @@
       <path value="QuestionnaireResponse.questionnaire" />
       <min value="1" />
     </element>
-    <element id="QuestionnaireResponse.subject">
-      <path value="QuestionnaireResponse.subject" />
-      <max value="0" />
-    </element>
-    <element id="QuestionnaireResponse.context">
-      <path value="QuestionnaireResponse.context" />
-      <max value="0" />
-    </element>
     <element id="QuestionnaireResponse.authored">
       <path value="QuestionnaireResponse.authored" />
       <min value="1" />
     </element>
     <element id="QuestionnaireResponse.author">
       <path value="QuestionnaireResponse.author" />
-      <max value="0" />
+      <min value="1" />
     </element>
     <element id="QuestionnaireResponse.source">
       <path value="QuestionnaireResponse.source" />
-      <min value="1" />
+      <max value="0" />
     </element>
     <element id="QuestionnaireResponse.source.id">
       <path value="QuestionnaireResponse.source.id" />
