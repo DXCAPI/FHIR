@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-09-05T17:13:52.316+02:00" />
+    <lastUpdated value="2017-10-23T15:32:27.688+02:00" />
   </meta>
   <url value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Score_1" />
   <name value="DXC_HC_Score_1" />
@@ -58,7 +58,7 @@
       <definition value="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Element.id" />
         <min value="0" />
@@ -198,6 +198,10 @@
     </element>
   </snapshot>
   <differential>
+    <element id="Extension.id">
+      <path value="Extension.id" />
+      <max value="0" />
+    </element>
     <element id="Extension.url">
       <path value="Extension.url" />
       <fixedUri value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Score_1" />

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-09-15T13:45:10.431+02:00" />
+    <lastUpdated value="2017-10-23T15:40:25.681+02:00" />
   </meta>
   <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_ClinicalResponse_1" />
   <name value="DXC_HC_ClinicalResponse_1" />
@@ -538,16 +538,16 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Basic.extension:items">
+    <element id="Basic.extension:item">
       <path value="Basic.extension" />
-      <sliceName value="items" />
+      <sliceName value="item" />
       <short value="Optional Extensions Element" />
       <definition value="Optional Extension Element - found in all resources." />
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
       <alias value="extensions" />
       <alias value="user content" />
       <min value="0" />
-      <max value="*" />
+      <max value="1" />
       <base>
         <path value="DomainResource.extension" />
         <min value="0" />
@@ -556,6 +556,92 @@
       <type>
         <code value="Extension" />
         <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Item_1" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() | (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element id="Basic.extension:risk">
+      <path value="Basic.extension" />
+      <sliceName value="risk" />
+      <short value="Optional Extensions Element" />
+      <definition value="Optional Extension Element - found in all resources." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="DomainResource.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Risk_1" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() | (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element id="Basic.extension:questionnaire">
+      <path value="Basic.extension" />
+      <sliceName value="questionnaire" />
+      <short value="Optional Extensions Element" />
+      <definition value="Optional Extension Element - found in all resources." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="DomainResource.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_CR_Questionnaire_1" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -3027,14 +3113,38 @@
         <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Agreed_1" />
       </type>
     </element>
-    <element id="Basic.extension:items">
+    <element id="Basic.extension:item">
       <path value="Basic.extension" />
-      <sliceName value="items" />
+      <sliceName value="item" />
       <short value="Optional Extensions Element" />
       <definition value="Optional Extension Element - found in all resources." />
+      <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Item_1" />
+      </type>
+    </element>
+    <element id="Basic.extension:risk">
+      <path value="Basic.extension" />
+      <sliceName value="risk" />
+      <short value="Optional Extensions Element" />
+      <definition value="Optional Extension Element - found in all resources." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Risk_1" />
+      </type>
+    </element>
+    <element id="Basic.extension:questionnaire">
+      <path value="Basic.extension" />
+      <sliceName value="questionnaire" />
+      <short value="Optional Extensions Element" />
+      <definition value="Optional Extension Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_CR_Questionnaire_1" />
       </type>
     </element>
     <element id="Basic.identifier">
