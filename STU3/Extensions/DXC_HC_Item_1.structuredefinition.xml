@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-10-23T15:32:31.466+02:00" />
+    <lastUpdated value="2017-10-23T15:45:26.311+02:00" />
   </meta>
   <url value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Item_1" />
   <name value="DXC_HC_Item_1" />
@@ -163,9 +163,9 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.value[x]:valueId">
-      <path value="Extension.valueId" />
-      <sliceName value="valueId" />
+    <element id="Extension.value[x]:valueString">
+      <path value="Extension.valueString" />
+      <sliceName value="valueString" />
       <short value="Value of extension" />
       <definition value="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list)." />
       <comment value="A stream of bytes, base64 encoded" />
@@ -177,7 +177,7 @@
         <max value="1" />
       </base>
       <type>
-        <code value="id" />
+        <code value="string" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -206,11 +206,11 @@
       <path value="Extension.url" />
       <fixedUri value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Item_1" />
     </element>
-    <element id="Extension.value[x]:valueId">
-      <path value="Extension.valueId" />
-      <sliceName value="valueId" />
+    <element id="Extension.value[x]:valueString">
+      <path value="Extension.valueString" />
+      <sliceName value="valueString" />
       <type>
-        <code value="id" />
+        <code value="string" />
       </type>
     </element>
   </differential>
