@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-10-23T15:32:29.388+02:00" />
+    <lastUpdated value="2017-10-24T13:03:31.315+02:00" />
   </meta>
   <url value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Risk_1" />
   <name value="DXC_HC_Risk_1" />
@@ -12,6 +12,7 @@
   <abstract value="false" />
   <contextType value="resource" />
   <context value="Basic" />
+  <context value="Observation" />
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
