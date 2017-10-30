@@ -3,7 +3,7 @@
   <id value="25868b7e-c887-422c-a131-84c1a4b4e854" />
   <meta>
     <versionId value="2" />
-    <lastUpdated value="2017-08-14T11:50:17.742+02:00" />
+    <lastUpdated value="2017-10-30T12:33:29.104+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="pc" />
@@ -226,7 +226,7 @@
       <alias value="xhtml" />
       <alias value="display" />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="DomainResource.text" />
         <min value="0" />
@@ -1894,7 +1894,7 @@
       <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." />
       <alias value="fulfills" />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Procedure.basedOn" />
         <min value="0" />
@@ -2386,8 +2386,8 @@
       <short value="preparation | in-progress | suspended | aborted | completed | entered-in-error | unknown" />
       <definition value="A code specifying the state of the procedure. Generally this will be in-progress or completed state." />
       <comment value="The unknown code is not to be used to convey other statuses.  The unknown code should be used when one of the statuses applies, but the authoring system doesn't know the current state of the procedure.&#xA;&#xA;This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid." />
-      <min value="0" />
-      <max value="0" />
+      <min value="1" />
+      <max value="1" />
       <base>
         <path value="Procedure.status" />
         <min value="1" />
@@ -2737,7 +2737,7 @@
       <comment value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
       <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Coding.system" />
         <min value="0" />
@@ -2864,8 +2864,8 @@
       <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
-      <min value="0" />
-      <max value="0" />
+      <min value="1" />
+      <max value="1" />
       <base>
         <path value="Coding.display" />
         <min value="0" />
@@ -2951,8 +2951,8 @@
       <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user." />
       <comment value="Very often the text is the same as a displayName of one of the codings." />
       <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source." />
-      <min value="1" />
-      <max value="1" />
+      <min value="0" />
+      <max value="0" />
       <base>
         <path value="CodeableConcept.text" />
         <min value="0" />
@@ -3520,8 +3520,8 @@
       <comment value="Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination." />
       <requirements value="0..1 to account for primarily narrative only resources." />
       <alias value="type" />
-      <min value="0" />
-      <max value="0" />
+      <min value="1" />
+      <max value="1" />
       <base>
         <path value="Procedure.code" />
         <min value="0" />
@@ -3585,7 +3585,7 @@
       <definition value="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Element.id" />
         <min value="0" />
@@ -3662,7 +3662,7 @@
       <definition value="A reference to a code defined by a terminology system." />
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true." />
       <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
-      <min value="0" />
+      <min value="1" />
       <max value="*" />
       <base>
         <path value="CodeableConcept.coding" />
@@ -3717,7 +3717,7 @@
       <definition value="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Element.id" />
         <min value="0" />
@@ -3836,7 +3836,7 @@
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
       <comment value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Coding.version" />
         <min value="0" />
@@ -3877,7 +3877,7 @@
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <requirements value="Need to refer to a particular code in the system." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Coding.code" />
@@ -3965,7 +3965,7 @@
       <comment value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely." />
       <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Coding.userSelected" />
         <min value="0" />
@@ -4010,7 +4010,7 @@
       <comment value="Very often the text is the same as a displayName of one of the codings." />
       <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="CodeableConcept.text" />
         <min value="0" />
@@ -4052,7 +4052,7 @@
       <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." />
       <alias value="patient" />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Procedure.subject" />
         <min value="1" />
@@ -4300,7 +4300,7 @@
       <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." />
       <alias value="encounter" />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Procedure.context" />
         <min value="0" />
@@ -4358,7 +4358,7 @@
       <definition value="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Element.id" />
         <min value="0" />
@@ -4434,7 +4434,7 @@
       <short value="Literal reference, Relative, internal or absolute URL" />
       <definition value="A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
       <comment value="Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure &quot;/[type]/[id]&quot; then it should be assumed that the reference is to a FHIR RESTful server." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Reference.reference" />
@@ -4469,7 +4469,7 @@
       <definition value="An identifier for the other resource. This is used when there is no way to reference the other resource directly, either because the entity is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference." />
       <comment value="When an identifier is provided in place of a reference, any system processing the reference will only be able to resolve the identifier to a reference if it understands the business context in which the identifier is used. Sometimes this is global (e.g. a national identifier) but often it is not. For this reason, none of the useful mechanisms described for working with references (e.g. chaining, includes) are possible, nor should servers be expected to be able resolve the reference. Servers may accept an identifier based reference untouched, resolve it, and/or reject it - see CapabilityStatement.rest.resource.referencePolicy. &#xA;&#xA;When both an identifier and a literal reference are provided, the literal reference is preferred. Applications processing the resource are allowed - but not required - to check that the identifier matches the literal reference&#xA;&#xA;Applications converting a logical reference to a literal reference may choose to leave the logical reference present, or remove it." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Reference.identifier" />
         <min value="0" />
@@ -4588,8 +4588,8 @@
       <path value="Procedure.performer" />
       <short value="The people who performed the procedure" />
       <definition value="Limited to 'real' people rather than equipment." />
-      <min value="0" />
-      <max value="0" />
+      <min value="1" />
+      <max value="1" />
       <base>
         <path value="Procedure.performer" />
         <min value="0" />
@@ -4623,7 +4623,7 @@
       <definition value="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Element.id" />
         <min value="0" />
@@ -4744,7 +4744,7 @@
       <definition value="For example: surgeon, anaethetist, endoscopist." />
       <comment value="Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Procedure.performer.role" />
         <min value="0" />
@@ -5341,7 +5341,7 @@
       <definition value="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Element.id" />
         <min value="0" />
@@ -5417,7 +5417,7 @@
       <short value="Literal reference, Relative, internal or absolute URL" />
       <definition value="A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
       <comment value="Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure &quot;/[type]/[id]&quot; then it should be assumed that the reference is to a FHIR RESTful server." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Reference.reference" />
@@ -5452,7 +5452,7 @@
       <definition value="An identifier for the other resource. This is used when there is no way to reference the other resource directly, either because the entity is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference." />
       <comment value="When an identifier is provided in place of a reference, any system processing the reference will only be able to resolve the identifier to a reference if it understands the business context in which the identifier is used. Sometimes this is global (e.g. a national identifier) but often it is not. For this reason, none of the useful mechanisms described for working with references (e.g. chaining, includes) are possible, nor should servers be expected to be able resolve the reference. Servers may accept an identifier based reference untouched, resolve it, and/or reject it - see CapabilityStatement.rest.resource.referencePolicy. &#xA;&#xA;When both an identifier and a literal reference are provided, the literal reference is preferred. Applications processing the resource are allowed - but not required - to check that the identifier matches the literal reference&#xA;&#xA;Applications converting a logical reference to a literal reference may choose to leave the logical reference present, or remove it." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Reference.identifier" />
         <min value="0" />
@@ -5500,7 +5500,7 @@
       <definition value="Plain text narrative that identifies the resource in addition to the resource reference." />
       <comment value="This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Reference.display" />
         <min value="0" />
@@ -5534,7 +5534,7 @@
       <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." />
       <requirements value="Practitioners and Devices can be associated with multiple organizations.  This element indicates which organization they were acting on behalf of when performing the action." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Procedure.performer.onBehalfOf" />
         <min value="0" />
@@ -9396,7 +9396,7 @@
       <definition value="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Element.id" />
         <min value="0" />
@@ -9473,7 +9473,7 @@
       <definition value="The individual responsible for making the annotation." />
       <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Annotation.author[x]" />
         <min value="0" />
@@ -9532,7 +9532,7 @@
       <short value="When the annotation was made" />
       <definition value="Indicates when this particular annotation was made." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Annotation.time" />
         <min value="0" />
@@ -11295,10 +11295,6 @@
       <path value="Procedure.language" />
       <max value="0" />
     </element>
-    <element id="Procedure.text">
-      <path value="Procedure.text" />
-      <max value="0" />
-    </element>
     <element id="Procedure.contained">
       <path value="Procedure.contained" />
       <max value="0" />
@@ -11313,15 +11309,10 @@
     </element>
     <element id="Procedure.basedOn">
       <path value="Procedure.basedOn" />
-      <max value="0" />
+      <max value="1" />
     </element>
     <element id="Procedure.partOf">
       <path value="Procedure.partOf" />
-      <max value="0" />
-    </element>
-    <element id="Procedure.status">
-      <path value="Procedure.status" />
-      <min value="0" />
       <max value="0" />
     </element>
     <element id="Procedure.notDone">
@@ -11337,10 +11328,6 @@
       <path value="Procedure.notDoneReason.coding.id" />
       <max value="0" />
     </element>
-    <element id="Procedure.notDoneReason.coding.system">
-      <path value="Procedure.notDoneReason.coding.system" />
-      <max value="0" />
-    </element>
     <element id="Procedure.notDoneReason.coding.version">
       <path value="Procedure.notDoneReason.coding.version" />
       <max value="0" />
@@ -11354,7 +11341,7 @@
         <valueBoolean value="true" />
       </extension>
       <path value="Procedure.notDoneReason.coding.display" />
-      <max value="0" />
+      <min value="1" />
     </element>
     <element id="Procedure.notDoneReason.coding.userSelected">
       <path value="Procedure.notDoneReason.coding.userSelected" />
@@ -11365,7 +11352,7 @@
         <valueBoolean value="true" />
       </extension>
       <path value="Procedure.notDoneReason.text" />
-      <min value="1" />
+      <max value="0" />
     </element>
     <element id="Procedure.category">
       <path value="Procedure.category" />
@@ -11373,20 +11360,70 @@
     </element>
     <element id="Procedure.code">
       <path value="Procedure.code" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.code.id">
+      <path value="Procedure.code.id" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.code.coding">
+      <path value="Procedure.code.coding" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.code.coding.id">
+      <path value="Procedure.code.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.code.coding.version">
+      <path value="Procedure.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.code.coding.code">
+      <path value="Procedure.code.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.code.coding.userSelected">
+      <path value="Procedure.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.code.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Procedure.code.text" />
       <max value="0" />
     </element>
     <element id="Procedure.subject">
       <path value="Procedure.subject" />
       <min value="0" />
-      <max value="0" />
       <type>
         <code value="Reference" />
         <profile value="DXC_HC_Patient_1" />
         <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Patient_1" />
       </type>
     </element>
-    <element id="Procedure.context">
-      <path value="Procedure.context" />
+    <element id="Procedure.subject.id">
+      <path value="Procedure.subject.id" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.subject.reference">
+      <path value="Procedure.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.subject.identifier">
+      <path value="Procedure.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.context.id">
+      <path value="Procedure.context.id" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.context.reference">
+      <path value="Procedure.context.reference" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.context.identifier">
+      <path value="Procedure.context.identifier" />
       <max value="0" />
     </element>
     <element id="Procedure.performed[x]">
@@ -11398,6 +11435,38 @@
     </element>
     <element id="Procedure.performer">
       <path value="Procedure.performer" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Procedure.performer.id">
+      <path value="Procedure.performer.id" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.performer.role">
+      <path value="Procedure.performer.role" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.performer.actor.id">
+      <path value="Procedure.performer.actor.id" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.performer.actor.reference">
+      <path value="Procedure.performer.actor.reference" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.performer.actor.identifier">
+      <path value="Procedure.performer.actor.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.performer.actor.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Procedure.performer.actor.display" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.performer.onBehalfOf">
+      <path value="Procedure.performer.onBehalfOf" />
       <max value="0" />
     </element>
     <element id="Procedure.location">
@@ -11434,6 +11503,18 @@
     </element>
     <element id="Procedure.followUp">
       <path value="Procedure.followUp" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.note.id">
+      <path value="Procedure.note.id" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.note.author[x]">
+      <path value="Procedure.note.author[x]" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.note.time">
+      <path value="Procedure.note.time" />
       <max value="0" />
     </element>
     <element id="Procedure.focalDevice">
