@@ -1,0 +1,32 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+	<meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset" />
+    </meta>	
+	<text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>ValueSet of roles in NurseAide</h2>
+      <tt>http://www.csc.com/PublicServices/HC/FHIR/ValueSet/DXC_HC_Roles_1</tt>
+      <p>Describes all the possible codes for representing the users roles.</p>
+    </div>
+  </text>
+    <name value="ValueSet of roles in NurseAide" />
+	<url value="http://www.csc.com/PublicServices/HC/FHIR/ValueSet/DXC_HC_Roles_1" />
+    <status value="draft" />
+    <date value="2017-11-10" />
+    <publisher value="DXC" />
+    <description value="Describes all the possible codes for representing the users roles." />
+    <compose>
+        <include>
+            <system value="OHC" />
+            <concept>
+                <code value="nurse" />
+                <display value="General Nurse" />
+            </concept>
+            <concept>
+                <code value="supervisor" />
+                <display value="Supervisor" />
+            </concept>
+        </include>
+    </compose>
+</ValueSet>

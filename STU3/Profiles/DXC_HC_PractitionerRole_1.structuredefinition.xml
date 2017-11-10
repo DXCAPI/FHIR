@@ -3,7 +3,7 @@
   <id value="a4d8b7c5-1f26-4cf1-bb55-1bc91700cb9c" />
   <meta>
     <versionId value="1" />
-    <lastUpdated value="2017-08-14T12:42:59.976+02:00" />
+    <lastUpdated value="2017-11-10T11:40:57.631+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="pa" />
@@ -2387,8 +2387,8 @@
       <definition value="Roles which this practitioner is authorized to perform for the organization." />
       <comment value="A person may have more than one role. At least one role is required." />
       <requirements value="Need to know what authority the practitioner has - what can they do?" />
-      <min value="0" />
-      <max value="0" />
+      <min value="1" />
+      <max value="1" />
       <base>
         <path value="PractitionerRole.code" />
         <min value="0" />
@@ -2410,10 +2410,10 @@
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="PractitionerRole" />
         </extension>
-        <strength value="example" />
-        <description value="The role a person plays representing an organization" />
+        <strength value="required" />
+        <description value="General nurse or supervisor" />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/practitioner-role" />
+          <reference value="http://www.csc.com/PublicServices/HC/FHIR/ValueSet/DXC_HC_Roles_1" />
         </valueSetReference>
       </binding>
       <mapping>
@@ -2452,7 +2452,7 @@
       <definition value="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Element.id" />
         <min value="0" />
@@ -2529,8 +2529,8 @@
       <definition value="A reference to a code defined by a terminology system." />
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true." />
       <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
-      <min value="0" />
-      <max value="*" />
+      <min value="1" />
+      <max value="1" />
       <base>
         <path value="CodeableConcept.coding" />
         <min value="0" />
@@ -2584,7 +2584,7 @@
       <definition value="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Element.id" />
         <min value="0" />
@@ -2703,7 +2703,7 @@
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
       <comment value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Coding.version" />
         <min value="0" />
@@ -2744,7 +2744,7 @@
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <requirements value="Need to refer to a particular code in the system." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Coding.code" />
@@ -2789,7 +2789,7 @@
       <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Coding.display" />
@@ -2832,7 +2832,7 @@
       <comment value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely." />
       <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Coding.userSelected" />
         <min value="0" />
@@ -2877,7 +2877,7 @@
       <comment value="Very often the text is the same as a displayName of one of the codings." />
       <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="CodeableConcept.text" />
         <min value="0" />
@@ -5457,6 +5457,56 @@
     </element>
     <element id="PractitionerRole.code">
       <path value="PractitionerRole.code" />
+      <min value="1" />
+      <max value="1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="PractitionerRole" />
+        </extension>
+        <strength value="required" />
+        <description value="General nurse or supervisor" />
+        <valueSetReference>
+          <reference value="http://www.csc.com/PublicServices/HC/FHIR/ValueSet/DXC_HC_Roles_1" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="PractitionerRole.code.id">
+      <path value="PractitionerRole.code.id" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.code.coding">
+      <path value="PractitionerRole.code.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="PractitionerRole.code.coding.id">
+      <path value="PractitionerRole.code.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.code.coding.version">
+      <path value="PractitionerRole.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.code.coding.code">
+      <path value="PractitionerRole.code.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="PractitionerRole.code.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="PractitionerRole.code.coding.display" />
+      <min value="1" />
+    </element>
+    <element id="PractitionerRole.code.coding.userSelected">
+      <path value="PractitionerRole.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.code.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="PractitionerRole.code.text" />
       <max value="0" />
     </element>
     <element id="PractitionerRole.specialty">
