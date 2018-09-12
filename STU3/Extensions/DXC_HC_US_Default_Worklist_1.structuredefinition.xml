@@ -7,7 +7,8 @@
   <fhirVersion value="3.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
-  <contextType value="extension" />
+  <contextType value="resource" />
+  <context value="Basic" />
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
