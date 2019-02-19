@@ -1,0 +1,49 @@
+<SearchParameter xmlns="http://hl7.org/fhir">
+    <id value="purpose" />
+	<text>
+		<status value="generated" />
+		<div xmlns="http://www.w3.org/1999/xhtml">
+		  <p>
+			<b>Generated Narrative with Details</b>
+		  </p>
+		  <p>
+			<b>id</b>: purpose</p>
+		  <p>
+			<b>url</b>: <a>https://simplifier.net/DXCNurseAide/DXCHCPurpose1Search</a></p>
+		  <p>
+			<b>name</b>: purpose</p>
+		  <p>
+			<b>status</b>: draft</p>
+		  <p>
+			<b>experimental</b>: true</p>
+		  <p>
+			<b>publisher</b>: DXC HC</p>
+		  <p>
+			<b>code</b>: purpose</p>
+		  <p>
+			<b>base</b>: Questionnaire</p>
+		  <p>
+			<b>type</b>: token</p>
+		  <p>
+			<b>description</b>: Why this questionnaire is defined. </p>
+		  <p>
+			<b>expression</b>: Questionnaire.purpose</p>
+		  <p>
+			<b>xpath</b>: f:Questionnaire/f:purpose</p>
+		  <p>
+			<b>xpathUsage</b>: normal</p>
+		</div>
+	</text>
+    <url value="https://simplifier.net/DXCNurseAide/DXCHCPurpose1Search" />
+    <name value="purpose" />
+    <status value="draft" />
+    <experimental value="true" />
+    <publisher value="DXC HC" />
+    <code value="purpose" />
+    <base value="Questionnaire" />
+    <type value="string" />
+    <description value="Why this questionnaire is defined" />
+    <expression value="Questionnaire.purpose" />
+    <xpath value="f:Questionnaire/f:purpose" />
+    <xpathUsage value="normal" />
+</SearchParameter>

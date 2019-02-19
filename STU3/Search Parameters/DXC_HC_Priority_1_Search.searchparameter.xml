@@ -1,0 +1,48 @@
+<SearchParameter xmlns="http://hl7.org/fhir">
+    <id value="priority" />
+	<text>
+		<status value="generated" />
+		<div xmlns="http://www.w3.org/1999/xhtml">
+		  <p>
+			<b>Generated Narrative with Details</b>
+		  </p>
+		  <p>
+			<b>id</b>: priority</p>
+		  <p>
+			<b>url</b>: <a>https://simplifier.net/DXCNurseAide/DXCHCPrioritySearch</a></p>
+		  <p>
+			<b>name</b>: priority</p>
+		  <p>
+			<b>status</b>: draft</p>
+		  <p>
+			<b>experimental</b>: true</p>
+		  <p>
+			<b>publisher</b>: DXC HC</p>
+		  <p>
+			<b>code</b>: priority</p>
+		  <p>
+			<b>base</b>: Encounter</p>
+		  <p>
+			<b>type</b>: token</p>
+		  <p>
+			<b>description</b>: Indicates the urgency of the encounter </p>
+		  <p>
+			<b>expression</b>: Encounter.priority</p>
+		  <p>
+			<b>xpath</b>: f:Encounter/f:priority</p>
+		  <p>
+			<b>xpathUsage</b>: normal</p>
+		</div>
+	</text>
+	<url value="https://simplifier.net/DXCNurseAide/DXCHCPrioritySearch" />
+    <name value="priority" />
+    <status value="draft" />
+	<experimental value="true" />
+	<publisher value="DXC HC" />
+    <code value="priority" />
+    <base value="Encounter" />
+    <type value="token" />
+    <description value="Indicates the urgency of the encounter" />
+    <xpath value="f:Encounter/f:priority" />
+    <xpathUsage value="normal" />
+</SearchParameter>
