@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="facf3888-d4cb-458b-9151-256178c78f6a" />
   <meta>
@@ -719,7 +719,7 @@
       <short value="inpatient | outpatient | ambulatory | emergency +" />
       <definition value="inpatient | outpatient | ambulatory | emergency +." />
       <comment value="Codes may be defined very casually in enumerations or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Encounter.class" />
@@ -1381,7 +1381,7 @@
       <definition value="Indicates the urgency of the encounter." />
       <comment value="Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Encounter.priority" />
         <min value="0" />
@@ -2768,7 +2768,7 @@
       <definition value="The appointment that scheduled this encounter." />
       <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Encounter.appointment" />
         <min value="0" />
@@ -4569,8 +4569,8 @@
       <short value="planned | active | reserved | completed" />
       <definition value="The status of the participants' presence at the specified location during the period specified. If the participant is is no longer at the location, then the period will have an end date/time." />
       <comment value="When the patient is no longer active at a location, then the period end date is entered, and the status may be changed to completed." />
-      <min value="0" />
-      <max value="0" />
+      <min value="1" />
+      <max value="1" />
       <base>
         <path value="Encounter.location.status" />
         <min value="0" />
@@ -4611,7 +4611,7 @@
       <short value="Time period during which the patient was present at the location" />
       <definition value="Time period during which the patient was present at the location." />
       <comment value="This is not a duration - that's a measure of time (a separate type), but a duration that occurs at a fixed value of time. A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. &quot;the patient was an inpatient of the hospital for this time range&quot;) or one value from the range applies (e.g. &quot;give to the patient between these two times&quot;). If duration is required, specify the type as Interval|Duration." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Encounter.location.period" />
@@ -4736,7 +4736,7 @@
       <short value="Starting time with inclusive boundary" />
       <definition value="The start of the period. The boundary is inclusive." />
       <comment value="If the low element is missing, the meaning is that the low boundary is not known." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Period.start" />
@@ -4937,6 +4937,10 @@
       <path value="Encounter.statusHistory" />
       <max value="0" />
     </element>
+    <element id="Encounter.class">
+      <path value="Encounter.class" />
+      <min value="1" />
+    </element>
     <element id="Encounter.class.id">
       <path value="Encounter.class.id" />
       <max value="0" />
@@ -4966,10 +4970,6 @@
     </element>
     <element id="Encounter.type">
       <path value="Encounter.type" />
-      <max value="0" />
-    </element>
-    <element id="Encounter.priority">
-      <path value="Encounter.priority" />
       <max value="0" />
     </element>
     <element id="Encounter.subject">
@@ -5083,10 +5083,6 @@
       <path value="Encounter.participant.individual.display" />
       <max value="0" />
     </element>
-    <element id="Encounter.appointment">
-      <path value="Encounter.appointment" />
-      <max value="0" />
-    </element>
     <element id="Encounter.period">
       <path value="Encounter.period" />
       <max value="0" />
@@ -5183,11 +5179,19 @@
     </element>
     <element id="Encounter.location.status">
       <path value="Encounter.location.status" />
-      <max value="0" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.location.period">
+      <path value="Encounter.location.period" />
+      <min value="1" />
     </element>
     <element id="Encounter.location.period.id">
       <path value="Encounter.location.period.id" />
       <max value="0" />
+    </element>
+    <element id="Encounter.location.period.start">
+      <path value="Encounter.location.period.start" />
+      <min value="1" />
     </element>
     <element id="Encounter.serviceProvider">
       <path value="Encounter.serviceProvider" />
