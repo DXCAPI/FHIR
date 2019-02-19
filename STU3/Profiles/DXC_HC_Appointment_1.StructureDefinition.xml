@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Appointment_1" />
+  <name value="DXC_HC_Appointment_1" />
+  <status value="draft" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Appointment" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Appointment" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Appointment.id">
+      <path value="Appointment.id" />
+      <min value="1" />
+    </element>
+    <element id="Appointment.meta">
+      <path value="Appointment.meta" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.implicitRules">
+      <path value="Appointment.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.language">
+      <path value="Appointment.language" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.text">
+      <path value="Appointment.text" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.contained">
+      <path value="Appointment.contained" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.identifier">
+      <path value="Appointment.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.serviceCategory">
+      <path value="Appointment.serviceCategory" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.serviceType">
+      <path value="Appointment.serviceType" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.appointmentType">
+      <path value="Appointment.appointmentType" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.reason">
+      <path value="Appointment.reason" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.indication">
+      <path value="Appointment.indication" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.priority">
+      <path value="Appointment.priority" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.description">
+      <path value="Appointment.description" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.supportingInformation">
+      <path value="Appointment.supportingInformation" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.start">
+      <path value="Appointment.start" />
+      <min value="1" />
+    </element>
+    <element id="Appointment.end">
+      <path value="Appointment.end" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.minutesDuration">
+      <path value="Appointment.minutesDuration" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.slot">
+      <path value="Appointment.slot" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.created">
+      <path value="Appointment.created" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.comment">
+      <path value="Appointment.comment" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.incomingReferral">
+      <path value="Appointment.incomingReferral" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant">
+      <path value="Appointment.participant" />
+      <min value="0" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.requestedPeriod">
+      <path value="Appointment.requestedPeriod" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
