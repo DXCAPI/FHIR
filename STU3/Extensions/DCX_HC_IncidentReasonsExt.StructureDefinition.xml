@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="{taskTypeId}" />
+  <name value="incident_reasons" />
+  <status value="draft" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Basic" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:{reasonIdentifier}">
+      <path value="Extension.extension" />
+      <sliceName value="{reasonIdentifier}" />
+    </element>
+    <element id="Extension.extension:{reasonIdentifier}.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="{reasonIdentifier}" />
+    </element>
+    <element id="Extension.extension:{reasonIdentifier}.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.extension:{reasonIdentifier}.value[x]:valueCodeableConcept.id">
+      <path value="Extension.extension.valueCodeableConcept.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{reasonIdentifier}.value[x]:valueCodeableConcept.coding">
+      <path value="Extension.extension.valueCodeableConcept.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:{reasonIdentifier}.value[x]:valueCodeableConcept.coding.id">
+      <path value="Extension.extension.valueCodeableConcept.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{reasonIdentifier}.value[x]:valueCodeableConcept.coding.version">
+      <path value="Extension.extension.valueCodeableConcept.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{reasonIdentifier}.value[x]:valueCodeableConcept.coding.code">
+      <path value="Extension.extension.valueCodeableConcept.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:{reasonIdentifier}.value[x]:valueCodeableConcept.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.valueCodeableConcept.coding.display" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:{reasonIdentifier}.value[x]:valueCodeableConcept.coding.userSelected">
+      <path value="Extension.extension.valueCodeableConcept.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{reasonIdentifier}.value[x]:valueCodeableConcept.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.valueCodeableConcept.text" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="{taskTypeId}" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

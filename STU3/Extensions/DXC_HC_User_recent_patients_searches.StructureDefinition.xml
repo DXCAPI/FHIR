@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="recent-patients" />
+  <name value="recent_patients" />
+  <status value="draft" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Basic" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.id">
+      <path value="Extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:{encounterId}">
+      <path value="Extension.extension" />
+      <sliceName value="{encounterId}" />
+    </element>
+    <element id="Extension.extension:{encounterId}.id">
+      <path value="Extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension">
+      <path value="Extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:patientId">
+      <path value="Extension.extension.extension" />
+      <sliceName value="patientId" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:patientId.id">
+      <path value="Extension.extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:patientId.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="patientId" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:patientId.value[x]:valueString">
+      <path value="Extension.extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:class">
+      <path value="Extension.extension.extension" />
+      <sliceName value="class" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:class.id">
+      <path value="Extension.extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:class.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="class" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:class.value[x]:valueString">
+      <path value="Extension.extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:patientName">
+      <path value="Extension.extension.extension" />
+      <sliceName value="patientName" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:patientName.id">
+      <path value="Extension.extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:patientName.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="patientName" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:patientName.value[x]:valueString">
+      <path value="Extension.extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:gender">
+      <path value="Extension.extension.extension" />
+      <sliceName value="gender" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:gender.id">
+      <path value="Extension.extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:gender.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="gender" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:gender.value[x]:valueString">
+      <path value="Extension.extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:age">
+      <path value="Extension.extension.extension" />
+      <sliceName value="age" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:age.id">
+      <path value="Extension.extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:age.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="age" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:age.value[x]:valueString">
+      <path value="Extension.extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:location">
+      <path value="Extension.extension.extension" />
+      <sliceName value="location" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:location.id">
+      <path value="Extension.extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:location.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="location" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:location.value[x]:valueString">
+      <path value="Extension.extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:birthDate">
+      <path value="Extension.extension.extension" />
+      <sliceName value="birthDate" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:birthDate.id">
+      <path value="Extension.extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:birthDate.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="birthDate" />
+    </element>
+    <element id="Extension.extension:{encounterId}.extension:birthDate.value[x]:valueString">
+      <path value="Extension.extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:{encounterId}.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="{encounterId}" />
+    </element>
+    <element id="Extension.extension:{encounterId}.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="recent-patients" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

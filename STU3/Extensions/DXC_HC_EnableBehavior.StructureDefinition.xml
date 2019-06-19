@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/enableBehavior" />
+  <name value="enable_behavior" />
+  <status value="draft" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Questionnaire.item" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/enableBehavior" />
+    </element>
+    <element id="Extension.value[x]:valueCode">
+      <path value="Extension.valueCode" />
+      <sliceName value="valueCode" />
+      <type>
+        <code value="code" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
