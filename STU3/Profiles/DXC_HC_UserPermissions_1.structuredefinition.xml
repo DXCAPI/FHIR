@@ -101,7 +101,6 @@
     <element id="Basic.extension:edit_clinical_response">
       <path value="Basic.extension" />
       <sliceName value="edit_clinical_response" />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -136,15 +135,14 @@
     <element id="Basic.code.coding.code">
       <path value="Basic.code.coding.code" />
       <min value="1" />
-      <fixedCode value="US" />
+      <fixedCode value="user-permissions" />
     </element>
     <element id="Basic.code.coding.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true" />
       </extension>
       <path value="Basic.code.coding.display" />
-      <min value="1" />
-      <fixedString value="UserSettings" />
+      <fixedString value="User Permissions" />
     </element>
     <element id="Basic.code.coding.userSelected">
       <path value="Basic.code.coding.userSelected" />

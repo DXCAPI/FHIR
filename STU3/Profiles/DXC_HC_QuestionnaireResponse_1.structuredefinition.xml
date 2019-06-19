@@ -93,6 +93,24 @@
       <path value="QuestionnaireResponse.item.id" />
       <max value="0" />
     </element>
+    <element id="QuestionnaireResponse.item.extension">
+      <path value="QuestionnaireResponse.item.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="QuestionnaireResponse.item.extension:DXC_HC_LZO_ObservationID">
+      <path value="QuestionnaireResponse.item.extension" />
+      <sliceName value="DXC_HC_LZO_ObservationID" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.dxc.technology/DXC-HC-LZO_ObservationID" />
+      </type>
+    </element>
     <element id="QuestionnaireResponse.item.definition">
       <path value="QuestionnaireResponse.item.definition" />
       <max value="0" />
