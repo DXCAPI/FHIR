@@ -43,6 +43,24 @@
       <path value="Encounter.contained" />
       <max value="0" />
     </element>
+    <element id="Encounter.extension">
+      <path value="Encounter.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Encounter.extension:specialties">
+      <path value="Encounter.extension" />
+      <sliceName value="specialties" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://example.org/fhir/StructureDefinition/specialties" />
+      </type>
+    </element>
     <element id="Encounter.identifier">
       <path value="Encounter.identifier" />
       <max value="0" />
