@@ -20,8 +20,51 @@
       <path value="AllergyIntolerance.id" />
       <min value="1" />
     </element>
-    <element id="AllergyIntolerance.meta">
-      <path value="AllergyIntolerance.meta" />
+    <element id="AllergyIntolerance.meta.id">
+      <path value="AllergyIntolerance.meta.id" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.meta.versionId">
+      <path value="AllergyIntolerance.meta.versionId" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.meta.lastUpdated">
+      <path value="AllergyIntolerance.meta.lastUpdated" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.meta.profile">
+      <path value="AllergyIntolerance.meta.profile" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.meta.security.id">
+      <path value="AllergyIntolerance.meta.security.id" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.meta.security.system">
+      <path value="AllergyIntolerance.meta.security.system" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.meta.security.version">
+      <path value="AllergyIntolerance.meta.security.version" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.meta.security.code">
+      <path value="AllergyIntolerance.meta.security.code" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.meta.security.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="AllergyIntolerance.meta.security.display" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.meta.security.userSelected">
+      <path value="AllergyIntolerance.meta.security.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.meta.tag">
+      <path value="AllergyIntolerance.meta.tag" />
       <max value="0" />
     </element>
     <element id="AllergyIntolerance.implicitRules">
@@ -171,7 +214,6 @@
     <element id="AllergyIntolerance.reaction.extension:reactionSeverity">
       <path value="AllergyIntolerance.reaction.extension" />
       <sliceName value="reactionSeverity" />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
