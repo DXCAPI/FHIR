@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="Organizations" />
+  <name value="Organizations" />
+  <status value="draft" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="CodeSystem.concept" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.id">
+      <path value="Extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:{organizationId}">
+      <path value="Extension.extension" />
+      <sliceName value="{organizationId}" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:{organizationId}.id">
+      <path value="Extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{organizationId}.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="{organizationId}" />
+    </element>
+    <element id="Extension.extension:{organizationId}.value[x]:valueReference">
+      <path value="Extension.extension.valueReference" />
+      <sliceName value="valueReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <profile value="Organization" />
+      </type>
+    </element>
+    <element id="Extension.extension:{organizationId}.value[x]:valueReference.id">
+      <path value="Extension.extension.valueReference.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{organizationId}.value[x]:valueReference.reference">
+      <path value="Extension.extension.valueReference.reference" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:{organizationId}.value[x]:valueReference.identifier">
+      <path value="Extension.extension.valueReference.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{organizationId}.value[x]:valueReference.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.valueReference.display" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="Organizations" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
