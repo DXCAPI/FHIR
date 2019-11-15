@@ -70,14 +70,23 @@
         <profile value="rate_of_breach_alert" />
       </type>
     </element>
-    <element id="ProcedureRequest.extension:AUTEGENERATE">
+    <element id="ProcedureRequest.extension:AUTOGENERATE">
       <path value="ProcedureRequest.extension" />
-      <sliceName value="AUTEGENERATE" />
-      <min value="0" />
+      <sliceName value="AUTOGENERATE" />
       <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="AUTOGENERATE" />
+      </type>
+    </element>
+    <element id="ProcedureRequest.extension:MINIMUM_URINE_OUTPUT">
+      <path value="ProcedureRequest.extension" />
+      <sliceName value="MINIMUM_URINE_OUTPUT" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="MINIMUM_URINE_OUTPUT" />
       </type>
     </element>
     <element id="ProcedureRequest.identifier">
