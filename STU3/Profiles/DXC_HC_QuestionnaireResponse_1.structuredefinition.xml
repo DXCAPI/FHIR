@@ -38,6 +38,26 @@
       <path value="QuestionnaireResponse.contained" />
       <max value="0" />
     </element>
+    <element id="QuestionnaireResponse.extension">
+      <path value="QuestionnaireResponse.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="QuestionnaireResponse.extension:partiallyCalculatedScore">
+      <path value="QuestionnaireResponse.extension" />
+      <sliceName value="partiallyCalculatedScore" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="partiallyCalculatedScore" />
+      </type>
+    </element>
     <element id="QuestionnaireResponse.identifier">
       <path value="QuestionnaireResponse.identifier" />
       <max value="0" />

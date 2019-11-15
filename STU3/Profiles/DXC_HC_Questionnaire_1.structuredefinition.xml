@@ -190,6 +190,15 @@
         <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/requiredBehavior" />
       </type>
     </element>
+    <element id="Questionnaire.item.extension:referenceRanges">
+      <path value="Questionnaire.item.extension" />
+      <sliceName value="referenceRanges" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ReferenceRanges" />
+      </type>
+    </element>
     <element id="Questionnaire.item.definition">
       <path value="Questionnaire.item.definition" />
       <max value="0" />
@@ -278,6 +287,98 @@
       <type>
         <code value="Quantity" />
       </type>
+    </element>
+    <element id="Questionnaire.item.item.id">
+      <path value="Questionnaire.item.item.id" />
+      <max value="0" />
+    </element>
+    <element id="Questionnaire.item.item.extension">
+      <path value="Questionnaire.item.item.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+	<element id="Questionnaire.item.item.extension:entryFormat">
+      <path value="Questionnaire.item.item.extension" />
+      <sliceName value="entryFormat" />
+      <type>
+        <code value="Extension" />
+        <profile value="entryFormat" />
+      </type>
+    </element>
+    <element id="Questionnaire.item.item.extension:allowBlankAnswer">
+      <path value="Questionnaire.item.item.extension" />
+      <sliceName value="allowBlankAnswer" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Allow_blank_answer" />
+      </type>
+    </element>
+    <element id="Questionnaire.item.item.extension:referenceRanges">
+      <path value="Questionnaire.item.item.extension" />
+      <sliceName value="referenceRanges" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ReferenceRanges" />
+      </type>
+    </element>
+    <element id="Questionnaire.item.item.extension:enableBehavior">
+      <path value="Questionnaire.item.item.extension" />
+      <sliceName value="enableBehavior" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/enableBehavior" />
+      </type>
+    </element>
+    <element id="Questionnaire.item.item.extension:requiredBehavior">
+      <path value="Questionnaire.item.item.extension" />
+      <sliceName value="requiredBehavior" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/requiredBehavior" />
+      </type>
+    </element>
+    <element id="Questionnaire.item.item.extension:requiredWhen">
+      <path value="Questionnaire.item.item.extension" />
+      <sliceName value="requiredWhen" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/requiredWhen" />
+      </type>
+    </element>
+    <element id="Questionnaire.item.item.definition">
+      <path value="Questionnaire.item.item.definition" />
+      <max value="0" />
+    </element>
+    <element id="Questionnaire.item.item.code">
+      <path value="Questionnaire.item.item.code" />
+      <max value="0" />
+    </element>
+    <element id="Questionnaire.item.item.prefix">
+      <path value="Questionnaire.item.item.prefix" />
+      <max value="0" />
+    </element>
+    <element id="Questionnaire.item.item.text">
+      <path value="Questionnaire.item.item.text" />
+      <min value="1" />
+    </element>
+    <element id="Questionnaire.item.item.repeats">
+      <path value="Questionnaire.item.item.repeats" />
+      <max value="0" />
     </element>
   </differential>
 </StructureDefinition>

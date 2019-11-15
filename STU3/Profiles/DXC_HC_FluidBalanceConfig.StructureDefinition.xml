@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="972ef390-d214-4e90-9057-346d5d6024bc" />
-  <meta>
-    <versionId value="1" />
-    <lastUpdated value="2018-04-23T08:20:05.064+00:00" />
-  </meta>
-  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_ClinicalResponse_1" />
-  <name value="DXC_HC_ClinicalResponse_1" />
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_FluidBalanceConfig" />
+  <name value="DXC_HC_FluidBalanceConfig" />
   <status value="draft" />
-  <date value="2017-09-05T13:35:27.841+02:00" />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -16,6 +10,10 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Basic" />
   <derivation value="constraint" />
   <differential>
+    <element id="Basic.id">
+      <path value="Basic.id" />
+      <min value="1" />
+    </element>
     <element id="Basic.meta">
       <path value="Basic.meta" />
       <max value="0" />
@@ -46,56 +44,34 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Basic.extension:global">
+    <element id="Basic.extension:templateStartTime">
       <path value="Basic.extension" />
-      <sliceName value="global" />
-      <short value="Optional Extensions Element" />
-      <definition value="Optional Extension Element - found in all resources." />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_CR_Global_1" />
-      </type>
-    </element>
-    <element id="Basic.extension:questionnaire">
-      <path value="Basic.extension" />
-      <sliceName value="questionnaire" />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_CR_Questionnaire_1" />
-      </type>
-    </element>
-    <element id="Basic.extension:items">
-      <path value="Basic.extension" />
-      <sliceName value="items" />
-      <short value="Optional Extensions Element" />
-      <definition value="Optional Extension Element - found in all resources." />
-      <min value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_CR_Item_1" />
-      </type>
-    </element>
-    <element id="Basic.extension:partiallyCalculatedScore">
-      <path value="Basic.extension" />
-      <sliceName value="partiallyCalculatedScore" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="partiallyCalculatedScore" />
-      </type>
-    </element>
-    <element id="Basic.extension:DXC-HC-LZO_ObseravtionID">
-      <path value="Basic.extension" />
-      <sliceName value="DXC-HC-LZO_ObseravtionID" />
+      <sliceName value="templateStartTime" />
       <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC-HC-LZO_ObseravtionID" />
+        <profile value="TEMPLATE_START_TIME" />
+      </type>
+    </element>
+    <element id="Basic.extension:chartInterval">
+      <path value="Basic.extension" />
+      <sliceName value="chartInterval" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="CHART_INTERVAL" />
+      </type>
+    </element>
+    <element id="Basic.extension:subtotalInterval">
+      <path value="Basic.extension" />
+      <sliceName value="subtotalInterval" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="SUBTOTAL_INTERVAL" />
       </type>
     </element>
     <element id="Basic.identifier">
@@ -109,7 +85,6 @@
     <element id="Basic.code.coding">
       <path value="Basic.code.coding" />
       <min value="1" />
-      <max value="1" />
     </element>
     <element id="Basic.code.coding.id">
       <path value="Basic.code.coding.id" />
@@ -126,14 +101,6 @@
     <element id="Basic.code.coding.code">
       <path value="Basic.code.coding.code" />
       <min value="1" />
-      <fixedCode value="clinical-response" />
-    </element>
-    <element id="Basic.code.coding.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
-      <path value="Basic.code.coding.display" />
-      <fixedString value="Clinical Response" />
     </element>
     <element id="Basic.code.coding.userSelected">
       <path value="Basic.code.coding.userSelected" />
@@ -149,14 +116,14 @@
     <element id="Basic.subject">
       <path value="Basic.subject" />
       <min value="1" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_QuestionnaireResponse_1" />
-      </type>
     </element>
     <element id="Basic.subject.id">
       <path value="Basic.subject.id" />
       <max value="0" />
+    </element>
+    <element id="Basic.subject.reference">
+      <path value="Basic.subject.reference" />
+      <min value="1" />
     </element>
     <element id="Basic.subject.identifier">
       <path value="Basic.subject.identifier" />

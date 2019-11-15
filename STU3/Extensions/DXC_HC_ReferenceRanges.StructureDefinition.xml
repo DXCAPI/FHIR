@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ReferenceRanges" />
+  <name value="DXC_HC_ReferenceRanges" />
+  <status value="draft" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Questionnaire.item" />
+  <context value="Questionnaire.item.item" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:ValidRange">
+      <path value="Extension.extension" />
+      <sliceName value="ValidRange" />
+    </element>
+    <element id="Extension.extension:ValidRange.id">
+      <path value="Extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:ValidRange.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="ValidRange" />
+    </element>
+    <element id="Extension.extension:ValidRange.value[x]:valueRange">
+      <path value="Extension.extension.valueRange" />
+      <sliceName value="valueRange" />
+      <type>
+        <code value="Range" />
+      </type>
+    </element>
+    <element id="Extension.extension:ValidRange.value[x]:valueRange.id">
+      <path value="Extension.extension.valueRange.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:ValidRange.value[x]:valueRange.low.id">
+      <path value="Extension.extension.valueRange.low.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:ValidRange.value[x]:valueRange.low.system">
+      <path value="Extension.extension.valueRange.low.system" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:ValidRange.value[x]:valueRange.low.code">
+      <path value="Extension.extension.valueRange.low.code" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:ValidRange.value[x]:valueRange.high.id">
+      <path value="Extension.extension.valueRange.high.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:ValidRange.value[x]:valueRange.high.system">
+      <path value="Extension.extension.valueRange.high.system" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:ValidRange.value[x]:valueRange.high.code">
+      <path value="Extension.extension.valueRange.high.code" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:NormalRange">
+      <path value="Extension.extension" />
+      <sliceName value="NormalRange" />
+    </element>
+    <element id="Extension.extension:NormalRange.id">
+      <path value="Extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:NormalRange.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="NormalRange" />
+    </element>
+    <element id="Extension.extension:NormalRange.value[x]:valueRange">
+      <path value="Extension.extension.valueRange" />
+      <sliceName value="valueRange" />
+      <type>
+        <code value="Range" />
+      </type>
+    </element>
+    <element id="Extension.extension:NormalRange.value[x]:valueRange.id">
+      <path value="Extension.extension.valueRange.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:NormalRange.value[x]:valueRange.low.id">
+      <path value="Extension.extension.valueRange.low.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:NormalRange.value[x]:valueRange.low.system">
+      <path value="Extension.extension.valueRange.low.system" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:NormalRange.value[x]:valueRange.low.code">
+      <path value="Extension.extension.valueRange.low.code" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:NormalRange.value[x]:valueRange.high.id">
+      <path value="Extension.extension.valueRange.high.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:NormalRange.value[x]:valueRange.high.system">
+      <path value="Extension.extension.valueRange.high.system" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:NormalRange.value[x]:valueRange.high.code">
+      <path value="Extension.extension.valueRange.high.code" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ReferenceRanges" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

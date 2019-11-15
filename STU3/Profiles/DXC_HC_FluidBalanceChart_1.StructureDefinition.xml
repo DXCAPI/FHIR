@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ce084970-12a7-4707-b65b-1a7981fad8e2" />
-  <meta>
-    <versionId value="1" />
-    <lastUpdated value="2019-09-04T09:31:10.6775174+00:00" />
-  </meta>
-  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
-    <valueCode value="oo" />
-  </extension>
-  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_ProcedureRequest_1" />
-  <version value="1" />
-  <name value="DXC_HC_ProcedureRequest_1" />
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_FluidBalanceChart_1" />
+  <name value="DXC_HC_FluidBalanceChart_1" />
   <status value="draft" />
-  <date value="2019-09-04T09:31:10.4044512Z" />
-  <fhirVersion value="3.0.0" />
+  <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="ProcedureRequest" />
@@ -44,6 +34,10 @@
       <path value="ProcedureRequest.text.id" />
       <max value="0" />
     </element>
+    <element id="ProcedureRequest.text.status">
+      <path value="ProcedureRequest.text.status" />
+      <max value="0" />
+    </element>
     <element id="ProcedureRequest.contained">
       <path value="ProcedureRequest.contained" />
       <max value="0" />
@@ -58,22 +52,32 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="ProcedureRequest.extension:specialties">
+    <element id="ProcedureRequest.extension:rate_of_breach_warning">
       <path value="ProcedureRequest.extension" />
-      <sliceName value="specialties" />
+      <sliceName value="rate_of_breach_warning" />
+      <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://example.org/fhir/StructureDefinition/specialties" />
+        <profile value="rate_of_breach_warning" />
       </type>
     </element>
-    <element id="ProcedureRequest.extension:MINIMUM_URINE_OUTPUT">
+    <element id="ProcedureRequest.extension:rate_of_breach_alert">
       <path value="ProcedureRequest.extension" />
-      <sliceName value="MINIMUM_URINE_OUTPUT" />
+      <sliceName value="rate_of_breach_alert" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="rate_of_breach_alert" />
+      </type>
+    </element>
+    <element id="ProcedureRequest.extension:AUTEGENERATE">
+      <path value="ProcedureRequest.extension" />
+      <sliceName value="AUTEGENERATE" />
       <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="MINIMUM_URINE_OUTPUT" />
+        <profile value="AUTOGENERATE" />
       </type>
     </element>
     <element id="ProcedureRequest.identifier">
@@ -83,6 +87,11 @@
     <element id="ProcedureRequest.definition">
       <path value="ProcedureRequest.definition" />
       <max value="0" />
+    </element>
+    <element id="ProcedureRequest.basedOn">
+      <path value="ProcedureRequest.basedOn" />
+      <min value="1" />
+      <max value="1" />
     </element>
     <element id="ProcedureRequest.basedOn.id">
       <path value="ProcedureRequest.basedOn.id" />
@@ -113,7 +122,6 @@
     </element>
     <element id="ProcedureRequest.intent">
       <path value="ProcedureRequest.intent" />
-      <min value="0" />
       <max value="0" />
     </element>
     <element id="ProcedureRequest.priority">
@@ -135,10 +143,13 @@
     <element id="ProcedureRequest.code.coding">
       <path value="ProcedureRequest.code.coding" />
       <min value="1" />
-      <max value="1" />
     </element>
     <element id="ProcedureRequest.code.coding.id">
       <path value="ProcedureRequest.code.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="ProcedureRequest.code.coding.system">
+      <path value="ProcedureRequest.code.coding.system" />
       <max value="0" />
     </element>
     <element id="ProcedureRequest.code.coding.version">
@@ -154,7 +165,7 @@
         <valueBoolean value="true" />
       </extension>
       <path value="ProcedureRequest.code.coding.display" />
-      <max value="0" />
+      <min value="1" />
     </element>
     <element id="ProcedureRequest.code.coding.userSelected">
       <path value="ProcedureRequest.code.coding.userSelected" />
@@ -165,15 +176,7 @@
         <valueBoolean value="true" />
       </extension>
       <path value="ProcedureRequest.code.text" />
-      <min value="1" />
-    </element>
-    <element id="ProcedureRequest.subject">
-      <path value="ProcedureRequest.subject" />
-      <min value="0" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-      </type>
+      <max value="0" />
     </element>
     <element id="ProcedureRequest.subject.id">
       <path value="ProcedureRequest.subject.id" />
@@ -196,68 +199,45 @@
     </element>
     <element id="ProcedureRequest.context">
       <path value="ProcedureRequest.context" />
-      <short value="Encounter during which request was created" />
-      <definition value="An encounter that provides additional information about the healthcare context in which this request is made." />
       <min value="1" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Encounter" />
-      </type>
     </element>
-    <element id="ProcedureRequest.occurrence[x]">
-      <path value="ProcedureRequest.occurrence[x]" />
+    <element id="ProcedureRequest.context.id">
+      <path value="ProcedureRequest.context.id" />
+      <max value="0" />
+    </element>
+    <element id="ProcedureRequest.context.reference">
+      <path value="ProcedureRequest.context.reference" />
+      <min value="1" />
+    </element>
+    <element id="ProcedureRequest.context.identifier">
+      <path value="ProcedureRequest.context.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ProcedureRequest.context.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="ProcedureRequest.context.display" />
+      <max value="0" />
+    </element>
+    <element id="ProcedureRequest.occurrence[x]:occurrencePeriod">
+      <path value="ProcedureRequest.occurrencePeriod" />
+      <sliceName value="occurrencePeriod" />
       <min value="1" />
       <type>
         <code value="Period" />
       </type>
-      <type>
-        <code value="Timing" />
-      </type>
     </element>
-    <element id="ProcedureRequest.asNeeded[x]:asNeededCodeableConcept">
-      <path value="ProcedureRequest.asNeededCodeableConcept" />
-      <sliceName value="asNeededCodeableConcept" />
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-    </element>
-    <element id="ProcedureRequest.asNeeded[x]:asNeededCodeableConcept.id">
-      <path value="ProcedureRequest.asNeededCodeableConcept.id" />
+    <element id="ProcedureRequest.occurrence[x]:occurrencePeriod.id">
+      <path value="ProcedureRequest.occurrencePeriod.id" />
       <max value="0" />
     </element>
-    <element id="ProcedureRequest.asNeeded[x]:asNeededCodeableConcept.coding">
-      <path value="ProcedureRequest.asNeededCodeableConcept.coding" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="ProcedureRequest.asNeeded[x]:asNeededCodeableConcept.coding.id">
-      <path value="ProcedureRequest.asNeededCodeableConcept.coding.id" />
-      <max value="0" />
-    </element>
-    <element id="ProcedureRequest.asNeeded[x]:asNeededCodeableConcept.coding.system">
-      <path value="ProcedureRequest.asNeededCodeableConcept.coding.system" />
-      <max value="0" />
-    </element>
-    <element id="ProcedureRequest.asNeeded[x]:asNeededCodeableConcept.coding.version">
-      <path value="ProcedureRequest.asNeededCodeableConcept.coding.version" />
-      <max value="0" />
-    </element>
-    <element id="ProcedureRequest.asNeeded[x]:asNeededCodeableConcept.coding.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
-      <path value="ProcedureRequest.asNeededCodeableConcept.coding.display" />
+    <element id="ProcedureRequest.occurrence[x]:occurrencePeriod.start">
+      <path value="ProcedureRequest.occurrencePeriod.start" />
       <min value="1" />
     </element>
-    <element id="ProcedureRequest.asNeeded[x]:asNeededCodeableConcept.coding.userSelected">
-      <path value="ProcedureRequest.asNeededCodeableConcept.coding.userSelected" />
-      <max value="0" />
-    </element>
-    <element id="ProcedureRequest.asNeeded[x]:asNeededCodeableConcept.text">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
-      <path value="ProcedureRequest.asNeededCodeableConcept.text" />
+    <element id="ProcedureRequest.asNeeded[x]">
+      <path value="ProcedureRequest.asNeeded[x]" />
       <max value="0" />
     </element>
     <element id="ProcedureRequest.authoredOn">
@@ -266,6 +246,33 @@
     </element>
     <element id="ProcedureRequest.requester">
       <path value="ProcedureRequest.requester" />
+      <min value="1" />
+    </element>
+    <element id="ProcedureRequest.requester.id">
+      <path value="ProcedureRequest.requester.id" />
+      <max value="0" />
+    </element>
+    <element id="ProcedureRequest.requester.agent.id">
+      <path value="ProcedureRequest.requester.agent.id" />
+      <max value="0" />
+    </element>
+    <element id="ProcedureRequest.requester.agent.reference">
+      <path value="ProcedureRequest.requester.agent.reference" />
+      <min value="1" />
+    </element>
+    <element id="ProcedureRequest.requester.agent.identifier">
+      <path value="ProcedureRequest.requester.agent.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ProcedureRequest.requester.agent.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="ProcedureRequest.requester.agent.display" />
+      <max value="0" />
+    </element>
+    <element id="ProcedureRequest.requester.onBehalfOf">
+      <path value="ProcedureRequest.requester.onBehalfOf" />
       <max value="0" />
     </element>
     <element id="ProcedureRequest.performerType">
@@ -276,6 +283,10 @@
       <path value="ProcedureRequest.performer" />
       <max value="0" />
     </element>
+    <element id="ProcedureRequest.reasonCode">
+      <path value="ProcedureRequest.reasonCode" />
+      <min value="1" />
+    </element>
     <element id="ProcedureRequest.reasonCode.id">
       <path value="ProcedureRequest.reasonCode.id" />
       <max value="0" />
@@ -283,7 +294,6 @@
     <element id="ProcedureRequest.reasonCode.coding">
       <path value="ProcedureRequest.reasonCode.coding" />
       <min value="1" />
-      <max value="1" />
     </element>
     <element id="ProcedureRequest.reasonCode.coding.id">
       <path value="ProcedureRequest.reasonCode.coding.id" />
@@ -312,9 +322,20 @@
       <path value="ProcedureRequest.reasonCode.coding.userSelected" />
       <max value="0" />
     </element>
+    <element id="ProcedureRequest.reasonCode.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="ProcedureRequest.reasonCode.text" />
+      <min value="1" />
+    </element>
     <element id="ProcedureRequest.reasonReference">
       <path value="ProcedureRequest.reasonReference" />
       <max value="0" />
+    </element>
+    <element id="ProcedureRequest.supportingInfo">
+      <path value="ProcedureRequest.supportingInfo" />
+      <min value="1" />
     </element>
     <element id="ProcedureRequest.supportingInfo.id">
       <path value="ProcedureRequest.supportingInfo.id" />
@@ -375,13 +396,37 @@
       <path value="ProcedureRequest.note.id" />
       <max value="0" />
     </element>
-    <element id="ProcedureRequest.note.author[x]">
-      <path value="ProcedureRequest.note.author[x]" />
+    <element id="ProcedureRequest.note.author[x]:authorReference">
+      <path value="ProcedureRequest.note.authorReference" />
+      <sliceName value="authorReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+    </element>
+    <element id="ProcedureRequest.note.author[x]:authorReference.id">
+      <path value="ProcedureRequest.note.authorReference.id" />
+      <max value="0" />
+    </element>
+    <element id="ProcedureRequest.note.author[x]:authorReference.reference">
+      <path value="ProcedureRequest.note.authorReference.reference" />
+      <min value="1" />
+    </element>
+    <element id="ProcedureRequest.note.author[x]:authorReference.identifier">
+      <path value="ProcedureRequest.note.authorReference.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ProcedureRequest.note.author[x]:authorReference.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="ProcedureRequest.note.authorReference.display" />
       <max value="0" />
     </element>
     <element id="ProcedureRequest.note.time">
       <path value="ProcedureRequest.note.time" />
-      <max value="0" />
+      <min value="1" />
     </element>
     <element id="ProcedureRequest.relevantHistory">
       <path value="ProcedureRequest.relevantHistory" />
