@@ -47,7 +47,6 @@
     <element id="Observation.extension:DXC-HC-Colour">
       <path value="Observation.extension" />
       <sliceName value="DXC-HC-Colour" />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -206,8 +205,46 @@
       <path value="Observation.valueQuantity.code" />
       <max value="0" />
     </element>
-    <element id="Observation.interpretation">
-      <path value="Observation.interpretation" />
+    <element id="Observation.interpretation.id">
+      <path value="Observation.interpretation.id" />
+      <max value="0" />
+    </element>
+    <element id="Observation.interpretation.coding">
+      <path value="Observation.interpretation.coding" />
+      <min value="1" />
+    </element>
+    <element id="Observation.interpretation.coding.id">
+      <path value="Observation.interpretation.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="Observation.interpretation.coding.system">
+      <path value="Observation.interpretation.coding.system" />
+      <max value="0" />
+    </element>
+    <element id="Observation.interpretation.coding.version">
+      <path value="Observation.interpretation.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Observation.interpretation.coding.code">
+      <path value="Observation.interpretation.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Observation.interpretation.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Observation.interpretation.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Observation.interpretation.coding.userSelected">
+      <path value="Observation.interpretation.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Observation.interpretation.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Observation.interpretation.text" />
       <max value="0" />
     </element>
     <element id="Observation.bodySite">
@@ -317,7 +354,6 @@
     <element id="Observation.component.extension:DXC-HC-Colour">
       <path value="Observation.component.extension" />
       <sliceName value="DXC-HC-Colour" />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
