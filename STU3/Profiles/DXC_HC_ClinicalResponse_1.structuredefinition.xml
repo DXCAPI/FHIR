@@ -46,18 +46,6 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Basic.extension:global">
-      <path value="Basic.extension" />
-      <sliceName value="global" />
-      <short value="Optional Extensions Element" />
-      <definition value="Optional Extension Element - found in all resources." />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_CR_Global_1" />
-      </type>
-    </element>
     <element id="Basic.extension:questionnaire">
       <path value="Basic.extension" />
       <sliceName value="questionnaire" />
@@ -66,17 +54,6 @@
       <type>
         <code value="Extension" />
         <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_CR_Questionnaire_1" />
-      </type>
-    </element>
-    <element id="Basic.extension:items">
-      <path value="Basic.extension" />
-      <sliceName value="items" />
-      <short value="Optional Extensions Element" />
-      <definition value="Optional Extension Element - found in all resources." />
-      <min value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_CR_Item_1" />
       </type>
     </element>
     <element id="Basic.extension:partiallyCalculatedScore">
@@ -91,11 +68,29 @@
     <element id="Basic.extension:DXC-HC-LZO_ObseravtionID">
       <path value="Basic.extension" />
       <sliceName value="DXC-HC-LZO_ObseravtionID" />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC-HC-LZO_ObseravtionID" />
+      </type>
+    </element>
+    <element id="Basic.extension:singleScores">
+      <path value="Basic.extension" />
+      <sliceName value="singleScores" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="{itemQuestionnaire.linkId}" />
+      </type>
+    </element>
+    <element id="Basic.extension:globalScore">
+      <path value="Basic.extension" />
+      <sliceName value="globalScore" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="Global" />
       </type>
     </element>
     <element id="Basic.identifier">

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="c219c350-5e79-4aec-9ed4-acc4c38dda1c" />
+  <meta>
+    <versionId value="3" />
+    <lastUpdated value="2018-04-23T08:06:11.753+00:00" />
+  </meta>
+  <url value="Global" />
+  <name value="DXC_HC_CR_GlobalScore_1" />
+  <status value="draft" />
+  <date value="2018-04-23T09:01:44.624+02:00" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Basic" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.id">
+      <path value="Extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:DXC_HC_Score_1">
+      <path value="Extension.extension" />
+      <sliceName value="DXC_HC_Score_1" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Score_1.id">
+      <path value="Extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Score_1.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="DXC_HC_Score_1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Score_1.value[x]:valueDecimal">
+      <path value="Extension.extension.valueDecimal" />
+      <sliceName value="valueDecimal" />
+      <min value="1" />
+      <type>
+        <code value="decimal" />
+      </type>
+    </element>
+    <element id="Extension.extension:DXC_HC_Risk_1">
+      <path value="Extension.extension" />
+      <sliceName value="DXC_HC_Risk_1" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Risk_1.id">
+      <path value="Extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Risk_1.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="DXC_HC_Risk_1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Risk_1.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.extension:observation-delta">
+      <path value="Extension.extension" />
+      <sliceName value="observation-delta" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:observation-delta.id">
+      <path value="Extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:observation-delta.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="observation-delta" />
+    </element>
+    <element id="Extension.extension:observation-delta.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.extension:DXC_HC_Summary_1">
+      <path value="Extension.extension" />
+      <sliceName value="DXC_HC_Summary_1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Summary_1.id">
+      <path value="Extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Summary_1.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="DXC_HC_Summary_1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Summary_1.value[x]:valueString">
+      <path value="Extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:DXC_HC_Instruction_1">
+      <path value="Extension.extension" />
+      <sliceName value="DXC_HC_Instruction_1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Instruction_1.id">
+      <path value="Extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Instruction_1.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="DXC_HC_Instruction_1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Agreed_1">
+      <path value="Extension.extension" />
+      <sliceName value="DXC_HC_Agreed_1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Agreed_1.id">
+      <path value="Extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Agreed_1.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="DXC_HC_Agreed_1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_Agreed_1.value[x]:valueBoolean">
+      <path value="Extension.extension.valueBoolean" />
+      <sliceName value="valueBoolean" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:DXC_HC_RiskColor_1">
+      <path value="Extension.extension" />
+      <sliceName value="DXC_HC_RiskColor_1" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_RiskColor_1.id">
+      <path value="Extension.extension.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:DXC_HC_RiskColor_1.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="DXC_HC_RiskColor_1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_RiskColor_1.value[x]:valueString">
+      <path value="Extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="Global" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
