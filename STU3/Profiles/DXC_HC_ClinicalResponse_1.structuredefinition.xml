@@ -93,6 +93,16 @@
         <profile value="Global" />
       </type>
     </element>
+    <element id="Basic.extension:observation-delta">
+      <path value="Basic.extension" />
+      <sliceName value="observation-delta" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/observation-delta" />
+      </type>
+    </element>
     <element id="Basic.identifier">
       <path value="Basic.identifier" />
       <max value="0" />
