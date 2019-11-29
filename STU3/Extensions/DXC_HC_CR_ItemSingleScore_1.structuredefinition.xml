@@ -85,13 +85,51 @@
       <path value="Extension.extension.url" />
       <fixedUri value="DXC_HC_RiskColor_1" />
     </element>
-    <element id="Extension.extension:DXC_HC_RiskColor_1.value[x]:valueString">
-      <path value="Extension.extension.valueString" />
-      <sliceName value="valueString" />
+    <element id="Extension.extension:DXC_HC_RiskColor_1.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
       <min value="1" />
       <type>
-        <code value="string" />
+        <code value="CodeableConcept" />
       </type>
+    </element>
+    <element id="Extension.extension:DXC_HC_RiskColor_1.value[x]:valueCodeableConcept.id">
+      <path value="Extension.extension.valueCodeableConcept.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:DXC_HC_RiskColor_1.value[x]:valueCodeableConcept.coding.id">
+      <path value="Extension.extension.valueCodeableConcept.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:DXC_HC_RiskColor_1.value[x]:valueCodeableConcept.coding.system">
+      <path value="Extension.extension.valueCodeableConcept.coding.system" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:DXC_HC_RiskColor_1.value[x]:valueCodeableConcept.coding.version">
+      <path value="Extension.extension.valueCodeableConcept.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:DXC_HC_RiskColor_1.value[x]:valueCodeableConcept.coding.code">
+      <path value="Extension.extension.valueCodeableConcept.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_RiskColor_1.value[x]:valueCodeableConcept.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.valueCodeableConcept.coding.display" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:DXC_HC_RiskColor_1.value[x]:valueCodeableConcept.coding.userSelected">
+      <path value="Extension.extension.valueCodeableConcept.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:DXC_HC_RiskColor_1.value[x]:valueCodeableConcept.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.valueCodeableConcept.text" />
+      <max value="0" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
