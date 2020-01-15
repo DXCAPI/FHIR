@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://example.org/fhir/StructureDefinition/AllergiesCheck" />
+  <name value="DXC_HC_AllergiesCheck" />
+  <status value="draft" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Basic" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Basic" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Basic.id">
+      <path value="Basic.id" />
+      <min value="1" />
+    </element>
+    <element id="Basic.meta">
+      <path value="Basic.meta" />
+      <max value="0" />
+    </element>
+    <element id="Basic.implicitRules">
+      <path value="Basic.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Basic.language">
+      <path value="Basic.language" />
+      <max value="0" />
+    </element>
+    <element id="Basic.text">
+      <path value="Basic.text" />
+      <max value="0" />
+    </element>
+    <element id="Basic.contained">
+      <path value="Basic.contained" />
+      <max value="0" />
+    </element>
+    <element id="Basic.extension">
+      <path value="Basic.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Basic.extension:allergiesCheckText">
+      <path value="Basic.extension" />
+      <sliceName value="allergiesCheckText" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="DXC_HC_AllergyCheckedText" />
+      </type>
+    </element>
+    <element id="Basic.identifier">
+      <path value="Basic.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.id">
+      <path value="Basic.code.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.id">
+      <path value="Basic.code.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.system">
+      <path value="Basic.code.coding.system" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.version">
+      <path value="Basic.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.code">
+      <path value="Basic.code.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Basic.code.coding.userSelected">
+      <path value="Basic.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Basic.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject">
+      <path value="Basic.subject" />
+      <min value="1" />
+    </element>
+    <element id="Basic.subject.id">
+      <path value="Basic.subject.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.reference">
+      <path value="Basic.subject.reference" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+        <profile value="Patient" />
+      </type>
+    </element>
+    <element id="Basic.subject.identifier">
+      <path value="Basic.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Basic.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Basic.created">
+      <path value="Basic.created" />
+      <max value="0" />
+    </element>
+    <element id="Basic.author">
+      <path value="Basic.author" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
