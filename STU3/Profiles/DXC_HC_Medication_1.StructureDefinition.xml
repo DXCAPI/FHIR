@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Medication_1" />
+  <name value="DXC_HC_Medication_1" />
+  <status value="draft" />
+  <fhirVersion value="3.0.2" />
+  <mapping>
+    <identity value="script10.6" />
+    <uri value="http://ncpdp.org/SCRIPT10_6" />
+    <name value="Mapping to NCPDP SCRIPT 10.6" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/w5" />
+    <name value="W5 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Medication" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Medication" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Medication.id">
+      <path value="Medication.id" />
+      <min value="1" />
+    </element>
+    <element id="Medication.meta">
+      <path value="Medication.meta" />
+      <max value="0" />
+    </element>
+    <element id="Medication.implicitRules">
+      <path value="Medication.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Medication.language">
+      <path value="Medication.language" />
+      <max value="0" />
+    </element>
+    <element id="Medication.text">
+      <path value="Medication.text" />
+      <max value="0" />
+    </element>
+    <element id="Medication.contained">
+      <path value="Medication.contained" />
+      <max value="0" />
+    </element>
+    <element id="Medication.code">
+      <path value="Medication.code" />
+      <min value="1" />
+    </element>
+    <element id="Medication.code.id">
+      <path value="Medication.code.id" />
+      <max value="0" />
+    </element>
+    <element id="Medication.code.coding">
+      <path value="Medication.code.coding" />
+      <min value="1" />
+    </element>
+    <element id="Medication.code.coding.id">
+      <path value="Medication.code.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="Medication.code.coding.system">
+      <path value="Medication.code.coding.system" />
+      <max value="0" />
+    </element>
+    <element id="Medication.code.coding.version">
+      <path value="Medication.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Medication.code.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Medication.code.coding.display" />
+      <min value="1" />
+    </element>
+    <element id="Medication.code.coding.userSelected">
+      <path value="Medication.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Medication.code.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Medication.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Medication.status">
+      <path value="Medication.status" />
+      <max value="0" />
+    </element>
+    <element id="Medication.isBrand">
+      <path value="Medication.isBrand" />
+      <max value="0" />
+    </element>
+    <element id="Medication.isOverTheCounter">
+      <path value="Medication.isOverTheCounter" />
+      <max value="0" />
+    </element>
+    <element id="Medication.manufacturer">
+      <path value="Medication.manufacturer" />
+      <max value="0" />
+    </element>
+    <element id="Medication.form.id">
+      <path value="Medication.form.id" />
+      <max value="0" />
+    </element>
+    <element id="Medication.form.coding.id">
+      <path value="Medication.form.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="Medication.form.coding.system">
+      <path value="Medication.form.coding.system" />
+      <max value="0" />
+    </element>
+    <element id="Medication.form.coding.version">
+      <path value="Medication.form.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Medication.form.coding.userSelected">
+      <path value="Medication.form.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Medication.form.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Medication.form.text" />
+      <max value="0" />
+    </element>
+    <element id="Medication.ingredient">
+      <path value="Medication.ingredient" />
+      <max value="0" />
+    </element>
+    <element id="Medication.package">
+      <path value="Medication.package" />
+      <max value="0" />
+    </element>
+    <element id="Medication.image">
+      <path value="Medication.image" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
