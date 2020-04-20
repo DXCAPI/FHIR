@@ -13,19 +13,23 @@
     <name value="ValueSet of roles in NurseAide" />
 	<url value="http://www.csc.com/PublicServices/HC/FHIR/ValueSet/DXC_HC_Roles_1" />
     <status value="draft" />
-    <date value="2017-11-10" />
+    <date value="2020-04-20" />
     <publisher value="DXC" />
     <description value="Describes all the possible codes for representing the users roles." />
     <compose>
         <include>
             <system value="OHC" />
             <concept>
-                <code value="nurse" />
-                <display value="General Nurse" />
+                <code value="qualified_nurse" />
+                <display value="Qualified Nurse" />
             </concept>
             <concept>
-                <code value="supervisor" />
-                <display value="Supervisor" />
+                <code value="healthcare_professional" />
+                <display value="Healthcare Professional" />
+            </concept>
+			<concept>
+                <code value="healthcare_assistant" />
+                <display value="Healthcare Assistant" />
             </concept>
         </include>
     </compose>

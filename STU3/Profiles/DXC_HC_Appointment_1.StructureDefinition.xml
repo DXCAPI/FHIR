@@ -3,7 +3,7 @@
   <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Appointment_1" />
   <name value="DXC_HC_Appointment_1" />
   <status value="draft" />
-  <fhirVersion value="3.0.1" />
+  <fhirVersion value="3.0.2" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="Appointment" />
@@ -60,10 +60,6 @@
     </element>
     <element id="Appointment.priority">
       <path value="Appointment.priority" />
-      <max value="0" />
-    </element>
-    <element id="Appointment.description">
-      <path value="Appointment.description" />
       <max value="0" />
     </element>
     <element id="Appointment.supportingInformation">

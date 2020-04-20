@@ -3,7 +3,7 @@
   <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Goal_1" />
   <name value="DXC_HC_Goal_1" />
   <status value="draft" />
-  <fhirVersion value="3.0.1" />
+  <fhirVersion value="3.0.2" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="Goal" />
@@ -167,6 +167,14 @@
         <code value="date" />
       </type>
     </element>
+    <element id="Goal.statusDate">
+      <path value="Goal.statusDate" />
+      <max value="0" />
+    </element>
+    <element id="Goal.statusReason">
+      <path value="Goal.statusReason" />
+      <max value="0" />
+    </element>
     <element id="Goal.expressedBy">
       <path value="Goal.expressedBy" />
       <max value="0" />
@@ -178,6 +186,25 @@
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/ProcedureRequest" />
       </type>
+    </element>
+    <element id="Goal.addresses.id">
+      <path value="Goal.addresses.id" />
+      <max value="0" />
+    </element>
+    <element id="Goal.addresses.reference">
+      <path value="Goal.addresses.reference" />
+      <min value="1" />
+    </element>
+    <element id="Goal.addresses.identifier">
+      <path value="Goal.addresses.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Goal.addresses.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Goal.addresses.display" />
+      <max value="0" />
     </element>
     <element id="Goal.note.id">
       <path value="Goal.note.id" />

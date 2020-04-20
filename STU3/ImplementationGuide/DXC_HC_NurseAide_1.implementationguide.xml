@@ -20,9 +20,51 @@
     <description value="NurseAide Profiles" />
     <resource>
       <example value="false" />
-      <name value="DXC_HC_CommunicationRequest_1" />
+      <name value="DXC_HC_AllergiesCheck" />
       <sourceReference>
-        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_CommunicationRequest_1" />
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_AllergiesCheck" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_AllergyIntolerance_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_AllergyIntolerance_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_Appointment_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Appointment_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_ClinicalResponse_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_ClinicalResponse_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_CodeSystem_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_CodeSystem_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_Condition_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Condition_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_CustomTranslations" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_CustomTranslations" />
       </sourceReference>
     </resource>
     <resource>
@@ -39,11 +81,67 @@
         <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Encounter_1" />
       </sourceReference>
     </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_Flag_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Flag_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_FluidBalanceChart_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_FluidBalanceChart_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_FluidBalanceConfig" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_FluidBalanceConfig" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_FluidBalanceTemplate_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_FluidBalanceTemplate_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_Goal_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Goal_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_IncidentReasons" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_IncidentReasons" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_InitParameters_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_InitParameters_1" />
+      </sourceReference>
+    </resource>
     <resource>
       <example value="false" />
       <name value="DXC_HC_Location_1" />
       <sourceReference>
         <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Location_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_Medication_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Medication_1" />
       </sourceReference>
     </resource>
     <resource>
@@ -74,6 +172,20 @@
         <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Observation_1" />
       </sourceReference>
     </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_ObservationCDS" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_ObservationCDS" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_Observation_ranges" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Observation_ranges" />
+      </sourceReference>
+    </resource>
     <resource>
       <example value="false" />
       <name value="DXC_HC_Patient_1" />
@@ -86,6 +198,13 @@
       <name value="DXC_HC_Practitioner_1" />
       <sourceReference>
         <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Practitioner_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_PractitionerRole_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_PractitionerRole_1" />
       </sourceReference>
     </resource>
     <resource>
@@ -104,9 +223,44 @@
     </resource>
     <resource>
       <example value="false" />
+      <name value="DXC_HC_Questionnaire_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Questionnaire_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_QuestionnaireResponse_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_QuestionnaireResponse_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
       <name value="DXC_HC_Task_1" />
       <sourceReference>
         <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Task_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_User_recent_searches" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_User_recent_searches" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_UserPermissions_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_UserPermissions_1" />
+      </sourceReference>
+    </resource>
+	<resource>
+      <example value="false" />
+      <name value="DXC_HC_UserSettings_1" />
+      <sourceReference>
+        <reference value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_UserSettings_1" />
       </sourceReference>
     </resource>
   </package>
