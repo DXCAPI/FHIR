@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_CodeSystem" />
+  <name value="DXC_HC_CodeSystem" />
+  <status value="draft" />
+  <fhirVersion value="4.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="CodeSystem" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CodeSystem" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="CodeSystem.id">
+      <path value="CodeSystem.id" />
+      <min value="1" />
+    </element>
+    <element id="CodeSystem.meta.id">
+      <path value="CodeSystem.meta.id" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.meta.profile">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.meta.profile" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.meta.security">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.meta.tag">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.implicitRules">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.language">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.language" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.text" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.contained">
+      <path value="CodeSystem.contained" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.url">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.url" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.identifier">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.identifier" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.version">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.version" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.name">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.name" />
+      <min value="1" />
+    </element>
+    <element id="CodeSystem.title">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.title" />
+      <min value="1" />
+    </element>
+    <element id="CodeSystem.experimental">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.experimental" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.date">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.date" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.publisher">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.publisher" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.contact">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.contact" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.useContext">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="trial-use" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.useContext" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.jurisdiction">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.jurisdiction" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.purpose">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.purpose" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.copyright">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.copyright" />
+      <comment value="Systems are not required to have markdown support, and there is considerable variation in markdown syntax, so the text should be readable without markdown processing. The preferred markdown syntax is described here: http://daringfireball.net/projects/markdown/syntax (and tests here: http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)&#xD;&#xA; Sometimes, the copyright differs between the code system and the codes that are included. The copyright statement should clearly differentiate between these when required.&#xD;&#xA; Sometimes, the copyright differs between the code system and the codes that are included. The copyright statement should clearly differentiate between these when required.&#xD;&#xA; Sometimes, the copyright differs between the code system and the codes that are included. The copyright statement should clearly differentiate between these when required." />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.caseSensitive">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.caseSensitive" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.valueSet">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.valueSet" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.hierarchyMeaning">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.hierarchyMeaning" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.compositional">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.compositional" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.versionNeeded">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.versionNeeded" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.supplements">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.supplements" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.count">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.count" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.filter">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.filter" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.property">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Property" />
+      </extension>
+      <path value="CodeSystem.property" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.concept">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="ConceptDefinition" />
+      </extension>
+      <path value="CodeSystem.concept" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="CodeSystem.concept.id">
+      <path value="CodeSystem.concept.id" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.concept.extension">
+      <path value="CodeSystem.concept.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="CodeSystem.concept.extension:Organizations">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.concept.extension" />
+      <sliceName value="Organizations" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="Organizations" />
+      </type>
+    </element>
+    <element id="CodeSystem.concept.definition">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.concept.definition" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.concept.designation">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="CodeSystem.concept.designation" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.concept.property.id">
+      <path value="CodeSystem.concept.property.id" />
+      <max value="0" />
+    </element>
+    <element id="CodeSystem.concept.concept">
+      <path value="CodeSystem.concept.concept" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2018-04-23T09:33:42.548+00:00" />
+  </meta>
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_UserPermissions" />
+  <name value="DXC_HC_UserPermissions" />
+  <status value="draft" />
+  <date value="2018-04-23T10:45:28.989+02:00" />
+  <fhirVersion value="4.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Basic" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Basic" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Basic.id">
+      <path value="Basic.id" />
+      <min value="1" />
+    </element>
+    <element id="Basic.meta">
+      <path value="Basic.meta" />
+      <max value="0" />
+    </element>
+    <element id="Basic.implicitRules">
+      <path value="Basic.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Basic.language">
+      <path value="Basic.language" />
+      <max value="0" />
+    </element>
+    <element id="Basic.text">
+      <path value="Basic.text" />
+      <max value="0" />
+    </element>
+    <element id="Basic.contained">
+      <path value="Basic.contained" />
+      <max value="0" />
+    </element>
+    <element id="Basic.extension">
+      <path value="Basic.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Basic.extension:create_task">
+      <path value="Basic.extension" />
+      <sliceName value="create_task" />
+      <short value="Optional Extensions Element" />
+      <definition value="Optional Extension Element - found in all resources." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="CREATE_TASK" />
+      </type>
+    </element>
+    <element id="Basic.extension:update_task">
+      <path value="Basic.extension" />
+      <sliceName value="update_task" />
+      <short value="Optional Extensions Element" />
+      <definition value="Optional Extension Element - found in all resources." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="UPDATE_TASK" />
+      </type>
+    </element>
+    <element id="Basic.extension:undo_task">
+      <path value="Basic.extension" />
+      <sliceName value="undo_task" />
+      <short value="Optional Extensions Element" />
+      <definition value="Optional Extension Element - found in all resources." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="UNDO_TASK" />
+      </type>
+    </element>
+    <element id="Basic.extension:strike_out_task">
+      <path value="Basic.extension" />
+      <sliceName value="strike_out_task" />
+      <type>
+        <code value="Extension" />
+        <profile value="STRIKE_OUT_TASK" />
+      </type>
+    </element>
+    <element id="Basic.extension:run_cds_hooks">
+      <path value="Basic.extension" />
+      <sliceName value="run_cds_hooks" />
+      <type>
+        <code value="Extension" />
+        <profile value="RUN_CDS_HOOKS" />
+      </type>
+    </element>
+    <element id="Basic.extension:edit_clinical_response">
+      <path value="Basic.extension" />
+      <sliceName value="edit_clinical_response" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="EDIT_CLINICAL_RESPONSE" />
+      </type>
+    </element>
+    <element id="Basic.identifier">
+      <path value="Basic.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.id">
+      <path value="Basic.code.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding">
+      <path value="Basic.code.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Basic.code.coding.id">
+      <path value="Basic.code.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.system">
+      <path value="Basic.code.coding.system" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.version">
+      <path value="Basic.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.code">
+      <path value="Basic.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="user-permissions" />
+    </element>
+    <element id="Basic.code.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Basic.code.coding.display" />
+      <fixedString value="User Permissions" />
+    </element>
+    <element id="Basic.code.coding.userSelected">
+      <path value="Basic.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Basic.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject">
+      <path value="Basic.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_Practitioner" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_Practitioner" />
+      </type>
+    </element>
+    <element id="Basic.subject.id">
+      <path value="Basic.subject.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.reference">
+      <path value="Basic.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="Basic.subject.identifier">
+      <path value="Basic.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Basic.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Basic.created">
+      <path value="Basic.created" />
+      <max value="0" />
+    </element>
+    <element id="Basic.author">
+      <path value="Basic.author" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

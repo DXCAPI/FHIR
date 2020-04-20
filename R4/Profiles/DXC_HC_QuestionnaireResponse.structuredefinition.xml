@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-09-14T15:17:21.268+02:00" />
+  </meta>
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_QuestionnaireResponse" />
+  <name value="DXC_HC_QuestionnaireResponse" />
+  <status value="draft" />
+  <date value="2017-08-16T13:38:11.842+02:00" />
+  <fhirVersion value="4.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="QuestionnaireResponse" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="QuestionnaireResponse.id">
+      <path value="QuestionnaireResponse.id" />
+      <min value="1" />
+    </element>
+    <element id="QuestionnaireResponse.meta">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.meta" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.implicitRules">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.language">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.language" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.text" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.contained">
+      <path value="QuestionnaireResponse.contained" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.extension">
+      <path value="QuestionnaireResponse.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="QuestionnaireResponse.extension:partiallyCalculatedScore">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.extension" />
+      <sliceName value="partiallyCalculatedScore" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="partiallyCalculatedScore" />
+      </type>
+    </element>
+    <element id="QuestionnaireResponse.identifier">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.identifier" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.basedOn">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.partOf">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.partOf" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.questionnaire">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.questionnaire" />
+      <min value="1" />
+    </element>
+    <element id="QuestionnaireResponse.authored">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.authored" />
+      <min value="1" />
+    </element>
+    <element id="QuestionnaireResponse.author">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.author" />
+      <min value="1" />
+    </element>
+    <element id="QuestionnaireResponse.source">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.source" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.source.id">
+      <path value="QuestionnaireResponse.source.id" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.source.reference">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.source.reference" />
+      <min value="1" />
+    </element>
+    <element id="QuestionnaireResponse.source.identifier">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.source.identifier" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.source.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="QuestionnaireResponse.source.display" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.item">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.item" />
+      <min value="1" />
+    </element>
+    <element id="QuestionnaireResponse.item.id">
+      <path value="QuestionnaireResponse.item.id" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.item.extension">
+      <path value="QuestionnaireResponse.item.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="QuestionnaireResponse.item.extension:DXC_HC_LZO_ObservationID">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.item.extension" />
+      <sliceName value="DXC_HC_LZO_ObservationID" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.dxc.technology/DXC-HC-LZO_ObservationID" />
+      </type>
+    </element>
+    <element id="QuestionnaireResponse.item.extension:referenceRanges">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.item.extension" />
+      <sliceName value="referenceRanges" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_ReferenceRanges" />
+      </type>
+    </element>
+    <element id="QuestionnaireResponse.item.definition">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.item.definition" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.item.answer.id">
+      <path value="QuestionnaireResponse.item.answer.id" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.item.answer.extension">
+      <path value="QuestionnaireResponse.item.answer.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.extension:answerCancelled">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.item.answer.extension" />
+      <sliceName value="answerCancelled" />
+      <type>
+        <code value="Extension" />
+        <profile value="answerCancelled" />
+      </type>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.extension:cancellationReason">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.item.answer.extension" />
+      <sliceName value="cancellationReason" />
+      <short value="Optional Extensions Element" />
+      <definition value="Optional Extension Element - found in all resources." />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_Cancellation_Reason" />
+      </type>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.value[x]">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.item.answer.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+      <type>
+        <code value="date" />
+      </type>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <type>
+        <code value="time" />
+      </type>
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="Coding" />
+      </type>
+      <type>
+        <code value="Quantity" />
+      </type>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.item">
+      <path value="QuestionnaireResponse.item.answer.item" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.item.item.id">
+      <path value="QuestionnaireResponse.item.item.id" />
+      <max value="0" />
+    </element>
+    <element id="QuestionnaireResponse.item.item.definition">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="QuestionnaireResponse.item.item.definition" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

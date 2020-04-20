@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_InitParameters" />
+  <name value="DXC_HC_InitParameters" />
+  <status value="draft" />
+  <fhirVersion value="4.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Basic" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Basic" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Basic.id">
+      <path value="Basic.id" />
+      <min value="1" />
+    </element>
+    <element id="Basic.meta">
+      <path value="Basic.meta" />
+      <min value="1" />
+    </element>
+    <element id="Basic.meta.id">
+      <path value="Basic.meta.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.meta.lastUpdated">
+      <path value="Basic.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Basic.meta.profile">
+      <path value="Basic.meta.profile" />
+      <max value="0" />
+    </element>
+    <element id="Basic.meta.security">
+      <path value="Basic.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="Basic.meta.tag">
+      <path value="Basic.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="Basic.implicitRules">
+      <path value="Basic.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Basic.language">
+      <path value="Basic.language" />
+      <max value="0" />
+    </element>
+    <element id="Basic.text">
+      <path value="Basic.text" />
+      <max value="0" />
+    </element>
+    <element id="Basic.contained">
+      <path value="Basic.contained" />
+      <max value="0" />
+    </element>
+    <element id="Basic.extension">
+      <path value="Basic.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Basic.extension:num_items_history">
+      <path value="Basic.extension" />
+      <sliceName value="num_items_history" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="num_items_history" />
+      </type>
+    </element>
+    <element id="Basic.extension:comments_length">
+      <path value="Basic.extension" />
+      <sliceName value="comments_length" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="comments_length" />
+      </type>
+    </element>
+    <element id="Basic.extension:worklist_min_level_select">
+      <path value="Basic.extension" />
+      <sliceName value="worklist_min_level_select" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="worklist_min_level_select" />
+      </type>
+    </element>
+    <element id="Basic.extension:worklist_name_level_x">
+      <path value="Basic.extension" />
+      <sliceName value="worklist_name_level_x" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="worklist_name_level_x" />
+      </type>
+    </element>
+    <element id="Basic.extension:seconds_timeout_lock">
+      <path value="Basic.extension" />
+      <sliceName value="seconds_timeout_lock" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="seconds_timeout_lock" />
+      </type>
+    </element>
+    <element id="Basic.extension:seconds_time_to_check_notifications">
+      <path value="Basic.extension" />
+      <sliceName value="seconds_time_to_check_notifications" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="seconds_time_to_check_notifications" />
+      </type>
+    </element>
+    <element id="Basic.extension:priority_patient_image">
+      <path value="Basic.extension" />
+      <sliceName value="priority_patient_image" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="priority_patient_image" />
+      </type>
+    </element>
+    <element id="Basic.extension:application_date_format">
+      <path value="Basic.extension" />
+      <sliceName value="application_date_format" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="application_date_format" />
+      </type>
+    </element>
+    <element id="Basic.extension:num_items_EWS_history">
+      <path value="Basic.extension" />
+      <sliceName value="num_items_EWS_history" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="num_items_EWS_history" />
+      </type>
+    </element>
+    <element id="Basic.extension:hours_range_treatments">
+      <path value="Basic.extension" />
+      <sliceName value="hours_range_treatments" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="hours_range_treatments" />
+      </type>
+    </element>
+    <element id="Basic.extension:notifications_server_url">
+      <path value="Basic.extension" />
+      <sliceName value="notifications_server_url" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="notifications_server_url" />
+      </type>
+    </element>
+    <element id="Basic.extension:patient_identifier_formatter">
+      <path value="Basic.extension" />
+      <sliceName value="patient_identifier_formatter" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="patient_identifier_formatter" />
+      </type>
+    </element>
+    <element id="Basic.extension:task_types_available">
+      <path value="Basic.extension" />
+      <sliceName value="task_types_available" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="task_types_available" />
+      </type>
+    </element>
+    <element id="Basic.extension:num_days_history">
+      <path value="Basic.extension" />
+      <sliceName value="num_days_history" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="num_days_history" />
+      </type>
+    </element>
+    <element id="Basic.extension:num_days_EWS_history">
+      <path value="Basic.extension" />
+      <sliceName value="num_days_EWS_history" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="num_days_EWS_history" />
+      </type>
+    </element>
+    <element id="Basic.extension:buffer_current_group_minutes">
+      <path value="Basic.extension" />
+      <sliceName value="buffer_current_group_minutes" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="buffer_current_group_minutes" />
+      </type>
+    </element>
+    <element id="Basic.identifier">
+      <path value="Basic.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.id">
+      <path value="Basic.code.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding">
+      <path value="Basic.code.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Basic.code.coding.id">
+      <path value="Basic.code.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.system">
+      <path value="Basic.code.coding.system" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.version">
+      <path value="Basic.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.code">
+      <path value="Basic.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="init-parameters" />
+    </element>
+    <element id="Basic.code.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Basic.code.coding.display" />
+      <fixedString value="Initial Parameters" />
+    </element>
+    <element id="Basic.code.coding.userSelected">
+      <path value="Basic.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Basic.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject">
+      <path value="Basic.subject" />
+      <min value="1" />
+    </element>
+    <element id="Basic.subject.id">
+      <path value="Basic.subject.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.reference">
+      <path value="Basic.subject.reference" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.identifier">
+      <path value="Basic.subject.identifier" />
+      <min value="1" />
+    </element>
+    <element id="Basic.subject.identifier.id">
+      <path value="Basic.subject.identifier.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.identifier.use">
+      <path value="Basic.subject.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.identifier.type">
+      <path value="Basic.subject.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.identifier.system">
+      <path value="Basic.subject.identifier.system" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.identifier.value">
+      <path value="Basic.subject.identifier.value" />
+      <min value="1" />
+      <defaultValueString value="NurseAide" />
+    </element>
+    <element id="Basic.subject.identifier.period">
+      <path value="Basic.subject.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.identifier.assigner">
+      <path value="Basic.subject.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Basic.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Basic.created">
+      <path value="Basic.created" />
+      <max value="0" />
+    </element>
+    <element id="Basic.author">
+      <path value="Basic.author" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

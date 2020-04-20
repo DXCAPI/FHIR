@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-08-14T10:48:08.791+02:00" />
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="oo" />
+  </extension>
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_NutritionOrder" />
+  <version value="1" />
+  <name value="DXC_HC_NutritionOrder" />
+  <status value="draft" />
+  <date value="2017-05-25T12:39:36.0093512+02:00" />
+  <fhirVersion value="4.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="NutritionOrder" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/NutritionOrder" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="NutritionOrder.id">
+      <path value="NutritionOrder.id" />
+      <min value="1" />
+    </element>
+    <element id="NutritionOrder.meta">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.meta" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.implicitRules">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.language">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.language" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.text" />
+      <min value="1" />
+    </element>
+    <element id="NutritionOrder.contained">
+      <path value="NutritionOrder.contained" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.identifier">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.identifier" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.instantiatesCanonical">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.instantiatesCanonical" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.instantiatesUri">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.instantiatesUri" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.instantiates">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.instantiates" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.status">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.status" />
+      <min value="0" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.intent">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.intent" />
+      <min value="0" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.patient">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.patient" />
+      <min value="0" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.encounter">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.encounter" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.dateTime">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.dateTime" />
+      <min value="0" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.orderer">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.orderer" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.allergyIntolerance">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.allergyIntolerance" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.foodPreferenceModifier">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.foodPreferenceModifier" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.excludeFoodModifier">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.excludeFoodModifier" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet" />
+      <min value="1" />
+    </element>
+    <element id="NutritionOrder.oralDiet.id">
+      <path value="NutritionOrder.oralDiet.id" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.type">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.type" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="NutritionOrder.oralDiet.type.id">
+      <path value="NutritionOrder.oralDiet.type.id" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.type.coding">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="NutritionOrder.oralDiet.type.coding.id">
+      <path value="NutritionOrder.oralDiet.type.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.type.coding.version">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.type.coding.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.type.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="NutritionOrder.oralDiet.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.type.coding.userSelected">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.type.text" />
+      <min value="1" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.id">
+      <path value="NutritionOrder.oralDiet.schedule.id" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.event">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.event" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat" />
+      <min value="1" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.id">
+      <path value="NutritionOrder.oralDiet.schedule.repeat.id" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.bounds[x]">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.bounds[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Period" />
+      </type>
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.bounds[x]:boundsPeriod">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.bounds[x]" />
+      <sliceName value="boundsPeriod" />
+      <min value="1" />
+      <type>
+        <code value="Period" />
+      </type>
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.bounds[x]:boundsPeriod.id">
+      <path value="NutritionOrder.oralDiet.schedule.repeat.bounds[x].id" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.bounds[x]:boundsPeriod.start">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.bounds[x].start" />
+      <min value="1" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.count">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.count" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.countMax">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.countMax" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.duration">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.duration" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.durationMax">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.durationMax" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.durationUnit">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.durationUnit" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.frequency">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.frequency" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.frequencyMax">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.frequencyMax" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.period">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.period" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.periodMax">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.periodMax" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.periodUnit">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.periodUnit" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.dayOfWeek">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.dayOfWeek" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.timeOfDay">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.timeOfDay" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.when">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.when" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.repeat.offset">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.repeat.offset" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.schedule.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.schedule.code" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.nutrient">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.nutrient" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.texture">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.texture" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.oralDiet.fluidConsistencyType">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.oralDiet.fluidConsistencyType" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.supplement">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.supplement" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.enteralFormula">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.enteralFormula" />
+      <max value="0" />
+    </element>
+    <element id="NutritionOrder.note">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="NutritionOrder.note" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

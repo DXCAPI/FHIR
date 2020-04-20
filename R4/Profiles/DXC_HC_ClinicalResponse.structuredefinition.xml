@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="972ef390-d214-4e90-9057-346d5d6024bc" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2018-04-23T08:20:05.064+00:00" />
+  </meta>
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_ClinicalResponse" />
+  <name value="DXC_HC_ClinicalResponse" />
+  <status value="draft" />
+  <date value="2017-09-05T13:35:27.841+02:00" />
+  <fhirVersion value="4.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Basic" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Basic" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Basic.meta">
+      <path value="Basic.meta" />
+      <max value="0" />
+    </element>
+    <element id="Basic.implicitRules">
+      <path value="Basic.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Basic.language">
+      <path value="Basic.language" />
+      <max value="0" />
+    </element>
+    <element id="Basic.text">
+      <path value="Basic.text" />
+      <max value="0" />
+    </element>
+    <element id="Basic.contained">
+      <path value="Basic.contained" />
+      <max value="0" />
+    </element>
+    <element id="Basic.extension">
+      <path value="Basic.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Basic.extension:questionnaire">
+      <path value="Basic.extension" />
+      <sliceName value="questionnaire" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC_HC_CR_Questionnaire" />
+      </type>
+    </element>
+    <element id="Basic.extension:partiallyCalculatedScore">
+      <path value="Basic.extension" />
+      <sliceName value="partiallyCalculatedScore" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="partiallyCalculatedScore" />
+      </type>
+    </element>
+    <element id="Basic.extension:DXC-HC-LZO_ObseravtionID">
+      <path value="Basic.extension" />
+      <sliceName value="DXC-HC-LZO_ObseravtionID" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/DXC-HC-LZO_ObseravtionID" />
+      </type>
+    </element>
+    <element id="Basic.extension:singleScores">
+      <path value="Basic.extension" />
+      <sliceName value="singleScores" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="{itemQuestionnaire.linkId}" />
+      </type>
+    </element>
+    <element id="Basic.extension:globalScore">
+      <path value="Basic.extension" />
+      <sliceName value="globalScore" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="Global" />
+      </type>
+    </element>
+    <element id="Basic.extension:observation-delta">
+      <path value="Basic.extension" />
+      <sliceName value="observation-delta" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/observation-delta" />
+      </type>
+    </element>
+    <element id="Basic.identifier">
+      <path value="Basic.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.id">
+      <path value="Basic.code.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding">
+      <path value="Basic.code.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Basic.code.coding.id">
+      <path value="Basic.code.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.system">
+      <path value="Basic.code.coding.system" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.version">
+      <path value="Basic.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.coding.code">
+      <path value="Basic.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="clinical-response" />
+    </element>
+    <element id="Basic.code.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Basic.code.coding.display" />
+      <fixedString value="Clinical Response" />
+    </element>
+    <element id="Basic.code.coding.userSelected">
+      <path value="Basic.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Basic.code.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Basic.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject">
+      <path value="Basic.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_QuestionnaireResponse" />
+      </type>
+    </element>
+    <element id="Basic.subject.id">
+      <path value="Basic.subject.id" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.identifier">
+      <path value="Basic.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Basic.subject.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Basic.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Basic.created">
+      <path value="Basic.created" />
+      <max value="0" />
+    </element>
+    <element id="Basic.author">
+      <path value="Basic.author" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
