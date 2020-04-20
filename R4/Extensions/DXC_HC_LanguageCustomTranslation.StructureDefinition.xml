@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="{languageId}" />
+  <name value="language_custom_translation" />
+  <status value="draft" />
+  <fhirVersion value="4.0.0" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context> <type value="element" /> <expression value="Basic" /> </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:{label_level_0}">
+      <path value="Extension.extension" />
+      <sliceName value="{label_level_0}" />
+    </element>
+    <element id="Extension.extension:{label_level_0}.extension">
+      <path value="Extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:{label_level_0}.extension:{label_level_1}">
+      <path value="Extension.extension.extension" />
+      <sliceName value="{label_level_1}" />
+    </element>
+    <element id="Extension.extension:{label_level_0}.extension:{label_level_1}.extension">
+      <path value="Extension.extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:{label_level_0}.extension:{label_level_1}.extension:{label_level_2}">
+      <path value="Extension.extension.extension.extension" />
+      <sliceName value="{label_level_2}" />
+    </element>
+    <element id="Extension.extension:{label_level_0}.extension:{label_level_1}.extension:{label_level_2}.url">
+      <path value="Extension.extension.extension.extension.url" />
+      <fixedUri value="{label_level_2}" />
+    </element>
+    <element id="Extension.extension:{label_level_0}.extension:{label_level_1}.extension:{label_level_2}.value[x]:valueString">
+      <path value="Extension.extension.extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:{label_level_0}.extension:{label_level_1}.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="{label_level_1}" />
+    </element>
+    <element id="Extension.extension:{label_level_0}.extension:{label_level_1}.value[x]">
+      <path value="Extension.extension.extension.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{label_level_0}.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="{label_level_0}" />
+    </element>
+    <element id="Extension.extension:{label_level_0}.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{label_level_0_1}">
+      <path value="Extension.extension" />
+      <sliceName value="{label_level_0_1}" />
+    </element>
+    <element id="Extension.extension:{label_level_0_1}.extension">
+      <path value="Extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:{label_level_0_1}.extension:{label_level_1}">
+      <path value="Extension.extension.extension" />
+      <sliceName value="{label_level_1}" />
+    </element>
+    <element id="Extension.extension:{label_level_0_1}.extension:{label_level_1}.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="{label_level_1}" />
+    </element>
+    <element id="Extension.extension:{label_level_0_1}.extension:{label_level_1}.value[x]:valueString">
+      <path value="Extension.extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:{label_level_0_1}.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="{label_level_0_1}" />
+    </element>
+    <element id="Extension.extension:{label_level_0_1}.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:{label_level_0_2}">
+      <path value="Extension.extension" />
+      <sliceName value="{label_level_0_2}" />
+    </element>
+    <element id="Extension.extension:{label_level_0_2}.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="{label_level_0_2}" />
+    </element>
+    <element id="Extension.extension:{label_level_0_2}.value[x]:valueString">
+      <path value="Extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="{languageId}" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

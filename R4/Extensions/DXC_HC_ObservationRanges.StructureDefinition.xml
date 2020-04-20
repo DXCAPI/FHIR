@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="a4b4b9b9-a622-4eb1-a188-d32aae6a8200" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2019-06-18T09:59:50.7939109+00:00" />
+  </meta>
+  <url value="observationId" />
+  <name value="observation_ranges" />
+  <status value="draft" />
+  <date value="2019-06-18T09:59:50.684393Z" />
+  <fhirVersion value="4.0.0" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context> <type value="element" /> <expression value="Basic" /> </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:normal-ranges">
+      <path value="Extension.extension" />
+      <sliceName value="normal-ranges" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:normal-ranges.extension">
+      <path value="Extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{genderCriteria}">
+      <path value="Extension.extension.extension" />
+      <sliceName value="{genderCriteria}" />
+      <max value="4" />
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{genderCriteria}.extension">
+      <path value="Extension.extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{genderCriteria}.extension:{ageCriteria}">
+      <path value="Extension.extension.extension.extension" />
+      <sliceName value="{ageCriteria}" />
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{genderCriteria}.extension:{ageCriteria}.url">
+      <path value="Extension.extension.extension.extension.url" />
+      <fixedUri value="{ageCriteria}" />
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{genderCriteria}.extension:{ageCriteria}.value[x]:valueRange">
+      <path value="Extension.extension.extension.extension.valueRange" />
+      <sliceName value="valueRange" />
+      <type>
+        <code value="Range" />
+      </type>
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{genderCriteria}.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="{genderCriteria}" />
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{genderCriteria}.value[x]">
+      <path value="Extension.extension.extension.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{ageCriteria}">
+      <path value="Extension.extension.extension" />
+      <sliceName value="{ageCriteria}" />
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{ageCriteria}.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="{ageCriteria}" />
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{ageCriteria}.value[x]:valueRange">
+      <path value="Extension.extension.extension.valueRange" />
+      <sliceName value="valueRange" />
+      <type>
+        <code value="Range" />
+      </type>
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{genderCriteria2}">
+      <path value="Extension.extension.extension" />
+      <sliceName value="{genderCriteria2}" />
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{genderCriteria2}.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="{genderCriteria2}" />
+    </element>
+    <element id="Extension.extension:normal-ranges.extension:{genderCriteria2}.value[x]:valueRange">
+      <path value="Extension.extension.extension.valueRange" />
+      <sliceName value="valueRange" />
+      <type>
+        <code value="Range" />
+      </type>
+    </element>
+    <element id="Extension.extension:normal-ranges.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="normal-ranges" />
+    </element>
+    <element id="Extension.extension:normal-ranges.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:valid-ranges">
+      <path value="Extension.extension" />
+      <sliceName value="valid-ranges" />
+    </element>
+    <element id="Extension.extension:valid-ranges.extension">
+      <path value="Extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{genderCriteria}">
+      <path value="Extension.extension.extension" />
+      <sliceName value="{genderCriteria}" />
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{genderCriteria}.extension">
+      <path value="Extension.extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{genderCriteria}.extension:{ageCriteria}">
+      <path value="Extension.extension.extension.extension" />
+      <sliceName value="{ageCriteria}" />
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{genderCriteria}.extension:{ageCriteria}.url">
+      <path value="Extension.extension.extension.extension.url" />
+      <fixedUri value="{ageCriteria}" />
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{genderCriteria}.extension:{ageCriteria}.value[x]:valueRange">
+      <path value="Extension.extension.extension.extension.valueRange" />
+      <sliceName value="valueRange" />
+      <type>
+        <code value="Range" />
+      </type>
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{genderCriteria}.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="{genderCriteria}" />
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{genderCriteria}.value[x]">
+      <path value="Extension.extension.extension.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{ageCriteria}">
+      <path value="Extension.extension.extension" />
+      <sliceName value="{ageCriteria}" />
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{ageCriteria}.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="{ageCriteria}" />
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{ageCriteria}.value[x]:valueRange">
+      <path value="Extension.extension.extension.valueRange" />
+      <sliceName value="valueRange" />
+      <type>
+        <code value="Range" />
+      </type>
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{genderCriteria2}">
+      <path value="Extension.extension.extension" />
+      <sliceName value="{genderCriteria2}" />
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{genderCriteria2}.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="{genderCriteria2}" />
+    </element>
+    <element id="Extension.extension:valid-ranges.extension:{genderCriteria2}.value[x]:valueRange">
+      <path value="Extension.extension.extension.valueRange" />
+      <sliceName value="valueRange" />
+      <type>
+        <code value="Range" />
+      </type>
+    </element>
+    <element id="Extension.extension:valid-ranges.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="valid-ranges" />
+    </element>
+    <element id="Extension.extension:valid-ranges.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="observationId" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

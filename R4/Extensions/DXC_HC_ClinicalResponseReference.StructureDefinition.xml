@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/clinicalResponseReference" />
+  <name value="clinicalResponseReference" />
+  <status value="draft" />
+  <fhirVersion value="4.0.0" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context> <type value="element" /> <expression value="Observation" /> </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/clinicalResponseReference" />
+    </element>
+    <element id="Extension.value[x]:valueReference">
+      <path value="Extension.valueReference" />
+      <sliceName value="valueReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <profile value="DXC_HC_ClinicalResponse" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueReference.id">
+      <path value="Extension.valueReference.id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.value[x]:valueReference.reference">
+      <path value="Extension.valueReference.reference" />
+      <min value="1" />
+    </element>
+    <element id="Extension.value[x]:valueReference.identifier">
+      <path value="Extension.valueReference.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Extension.value[x]:valueReference.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.valueReference.display" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

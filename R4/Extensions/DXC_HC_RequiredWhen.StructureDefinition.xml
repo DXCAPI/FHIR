@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/requiredWhen" />
+  <name value="required_when" />
+  <status value="draft" />
+  <fhirVersion value="4.0.0" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context> <type value="element" /> <expression value="Questionnaire.item" /> </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:requiredWhen_x">
+      <path value="Extension.extension" />
+      <sliceName value="requiredWhen_x" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:requiredWhen_x.extension">
+      <path value="Extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:requiredWhen_x.extension:question">
+      <path value="Extension.extension.extension" />
+      <sliceName value="question" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:requiredWhen_x.extension:question.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="question" />
+    </element>
+    <element id="Extension.extension:requiredWhen_x.extension:question.value[x]:valueString">
+      <path value="Extension.extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:requiredWhen_x.extension:answer">
+      <path value="Extension.extension.extension" />
+      <sliceName value="answer" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:requiredWhen_x.extension:answer.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="answer" />
+    </element>
+    <element id="Extension.extension:requiredWhen_x.extension:answer.value[x]:valueString">
+      <path value="Extension.extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:requiredWhen_x.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="requiredWhen_x" />
+    </element>
+    <element id="Extension.extension:requiredWhen_x.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://www.csc.com/PublicServices/HC/FHIR/Extensions/requiredWhen" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
