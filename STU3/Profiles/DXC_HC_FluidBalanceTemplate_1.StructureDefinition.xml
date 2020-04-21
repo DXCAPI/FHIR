@@ -3,7 +3,7 @@
   <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_FluidBalanceTemplate_1" />
   <name value="DXC_HC_FluidBalanceTemplate_1" />
   <status value="draft" />
-  <fhirVersion value="3.0.1" />
+  <fhirVersion value="3.0.2" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="ProcedureRequest" />
@@ -64,11 +64,20 @@
     <element id="ProcedureRequest.extension:rate_of_breach_alert">
       <path value="ProcedureRequest.extension" />
       <sliceName value="rate_of_breach_alert" />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="rate_of_breach_alert" />
+      </type>
+    </element>
+    <element id="ProcedureRequest.extension:specialties">
+      <path value="ProcedureRequest.extension" />
+      <sliceName value="specialties" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://example.org/fhir/StructureDefinition/specialties" />
       </type>
     </element>
     <element id="ProcedureRequest.identifier">
@@ -93,6 +102,7 @@
     </element>
     <element id="ProcedureRequest.intent">
       <path value="ProcedureRequest.intent" />
+      <min value="0" />
       <max value="0" />
     </element>
     <element id="ProcedureRequest.priority">
@@ -151,6 +161,7 @@
     </element>
     <element id="ProcedureRequest.subject">
       <path value="ProcedureRequest.subject" />
+      <min value="0" />
       <max value="0" />
     </element>
     <element id="ProcedureRequest.context">

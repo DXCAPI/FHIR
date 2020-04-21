@@ -3,7 +3,7 @@
   <url value="http://www.csc.com/PublicServices/HC/FHIR/Profiles/DXC_HC_FluidBalanceChart_1" />
   <name value="DXC_HC_FluidBalanceChart_1" />
   <status value="draft" />
-  <fhirVersion value="3.0.1" />
+  <fhirVersion value="3.0.2" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="ProcedureRequest" />
@@ -82,7 +82,6 @@
     <element id="ProcedureRequest.extension:MINIMUM_URINE_OUTPUT">
       <path value="ProcedureRequest.extension" />
       <sliceName value="MINIMUM_URINE_OUTPUT" />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -131,7 +130,7 @@
     </element>
     <element id="ProcedureRequest.intent">
       <path value="ProcedureRequest.intent" />
-      <max value="0" />
+      <fixedCode value="order" />
     </element>
     <element id="ProcedureRequest.priority">
       <path value="ProcedureRequest.priority" />
