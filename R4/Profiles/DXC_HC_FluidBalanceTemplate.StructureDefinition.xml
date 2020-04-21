@@ -112,6 +112,16 @@
         <profile value="rate_of_breach_alert" />
       </type>
     </element>
+    <element id="ServiceRequest.extension:specialties">
+      <path value="ServiceRequest.extension" />
+      <sliceName value="specialties" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://example.org/fhir/StructureDefinition/specialties" />
+      </type>
+    </element>
     <element id="ServiceRequest.identifier">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
@@ -481,6 +491,16 @@
       </extension>
       <path value="ServiceRequest.supportingInfo.reference" />
       <min value="1" />
+    </element>
+    <element id="ServiceRequest.supportingInfo.type">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="ServiceRequest.supportingInfo.type" />
+      <max value="0" />
     </element>
     <element id="ServiceRequest.supportingInfo.identifier">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">

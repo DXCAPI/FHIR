@@ -197,6 +197,16 @@
       <path value="ServiceRequest.basedOn.reference" />
       <min value="1" />
     </element>
+    <element id="ServiceRequest.basedOn.type">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="ServiceRequest.basedOn.type" />
+      <max value="0" />
+    </element>
     <element id="ServiceRequest.basedOn.identifier">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
@@ -248,8 +258,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="ServiceRequest.intent" />
-      <min value="0" />
-      <max value="0" />
+      <fixedCode value="order" />
     </element>
     <element id="ServiceRequest.category">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -409,6 +418,16 @@
       <path value="ServiceRequest.subject.reference" />
       <min value="1" />
     </element>
+    <element id="ServiceRequest.subject.type">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="ServiceRequest.subject.type" />
+      <max value="0" />
+    </element>
     <element id="ServiceRequest.subject.identifier">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
@@ -503,6 +522,7 @@
           <path value="$this" />
         </discriminator>
       </slicing>
+      <min value="1" />
       <type>
         <code value="Period" />
       </type>
@@ -514,7 +534,7 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
         <valueCode value="4.0.0" />
       </extension>
-      <path value="ServiceRequest.occurrencePeriod" />
+      <path value="ServiceRequest.occurrence[x]" />
       <sliceName value="occurrencePeriod" />
       <min value="1" />
       <type>
@@ -522,18 +542,8 @@
       </type>
     </element>
     <element id="ServiceRequest.occurrence[x]:occurrencePeriod.id">
-      <path value="ServiceRequest.occurrencePeriod.id" />
+      <path value="ServiceRequest.occurrence[x].id" />
       <max value="0" />
-    </element>
-    <element id="ServiceRequest.occurrence[x]:occurrencePeriod.start">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="ServiceRequest.occurrencePeriod.start" />
-      <min value="1" />
     </element>
     <element id="ServiceRequest.asNeeded[x]">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -564,16 +574,56 @@
       </extension>
       <path value="ServiceRequest.requester" />
       <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
     </element>
     <element id="ServiceRequest.requester.id">
       <path value="ServiceRequest.requester.id" />
       <max value="0" />
     </element>
-    <element id="ServiceRequest.requester.agent">
-      <path value="ServiceRequest.requester.agent" />
+    <element id="ServiceRequest.requester.reference">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="ServiceRequest.requester.reference" />
+      <min value="1" />
     </element>
-    <element id="ServiceRequest.requester.onBehalfOf">
-      <path value="ServiceRequest.requester.onBehalfOf" />
+    <element id="ServiceRequest.requester.type">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="ServiceRequest.requester.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requester.identifier">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="ServiceRequest.requester.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requester.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="ServiceRequest.requester.display" />
       <max value="0" />
     </element>
     <element id="ServiceRequest.performerType">
@@ -754,6 +804,16 @@
       <path value="ServiceRequest.supportingInfo.reference" />
       <min value="1" />
     </element>
+    <element id="ServiceRequest.supportingInfo.type">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="ServiceRequest.supportingInfo.type" />
+      <max value="0" />
+    </element>
     <element id="ServiceRequest.supportingInfo.identifier">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
@@ -879,6 +939,7 @@
           <path value="$this" />
         </discriminator>
       </slicing>
+      <max value="0" />
     </element>
     <element id="ServiceRequest.note.author[x]:authorReference">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -940,7 +1001,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="ServiceRequest.note.time" />
-      <min value="1" />
+      <max value="0" />
     </element>
     <element id="ServiceRequest.patientInstruction">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
