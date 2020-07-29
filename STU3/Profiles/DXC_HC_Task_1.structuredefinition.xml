@@ -306,13 +306,18 @@
       <path value="Task.note.id" />
       <max value="0" />
     </element>
-    <element id="Task.note.author[x]">
-      <path value="Task.note.author[x]" />
-      <max value="0" />
+    <element id="Task.note.author[x]:authorReference">
+      <path value="Task.note.authorReference" />
+      <sliceName value="authorReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
     </element>
     <element id="Task.note.time">
       <path value="Task.note.time" />
-      <max value="0" />
+      <min value="1" />
     </element>
     <element id="Task.relevantHistory">
       <path value="Task.relevantHistory" />
